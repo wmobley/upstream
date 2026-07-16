@@ -1,0 +1,47 @@
+[
+  {
+    "volume_id": "vitalvolume",
+    "description": "Volume for vital",
+    "size_limit": 1024,
+    "size": 0,
+    "status": "AVAILABLE",
+    "creation_ts": "2026-02-17T00:38:18.656797",
+    "update_ts": "2026-02-17T00:38:18.656834"
+  },
+  {
+    "volume_id": "fluxvolume",
+    "description": "Volume for flux",
+    "size_limit": 1024,
+    "size": 0,
+    "status": "AVAILABLE",
+    "creation_ts": "2026-02-17T00:47:47.052890",
+    "update_ts": "2026-02-17T00:47:47.052925"
+  },
+  {
+    "volume_id": "willneo4j",
+    "description": "persistent storage for neo4j instance",
+    "size_limit": 3000,
+    "size": 0,
+    "status": "AVAILABLE",
+    "creation_ts": "2024-10-10T17:32:57.537524",
+    "update_ts": "2024-10-10T17:32:57.537536"
+  },
+  {
+    "volume_id": "upstreamvolume",
+    "description": "Volume for upstream",
+    "size_limit": 1024,
+    "size": 0,
+    "status": "AVAILABLE",
+    "creation_ts": "2025-12-04T19:03:40.953085",
+    "update_ts": "2025-12-04T19:03:40.953132"
+  },
+  {
+    "volume_id": "disastervolume",
+    "description": "",
+    "size_limit": 20000,
+    "size": 0,
+    "status": "AVAILABLE",
+    "creation_ts": "2026-02-02T21:39:49.340462",
+    "update_ts": "2026-02-02T21:39:49.340564"
+  }
+]

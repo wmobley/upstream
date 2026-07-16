@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Mobley
+  given-names: William
+  orcid: https://orcid.org/0000-0003-1783-0599
+- family-names: Osorio
+  given-names: Maximiliano
+- family-names: Krendelev
+  given-names: Vlad
+title: "Upstream: An open-source platform for environmental sensor data collection and publishing"
+version: v1.2.0
+date-released: 2026-07-16
+url: "https://github.com/wmobley/upstream"
+repository-code: "https://github.com/wmobley/upstream"
+abstract: >
+  Upstream is a full-stack platform for collecting, managing, and publishing
+  environmental sensor data. It supports a hierarchical data model
+  (Campaigns → Stations → Sensors → Measurements), interactive visualization,
+  and open data publishing via CKAN. Upstream is deployed on TACC Tapis Pods
+  and is designed for field researchers working with time-series and
+  geospatial sensor data.
+keywords:
+  - environmental monitoring
+  - sensor data
+  - time series
+  - geospatial
+  - open data
+  - CKAN
+  - Tapis
+references:
+  - type: software
+    title: "upstream-docker-pods: Upstream API"
+    repository-code: "https://github.com/wmobley/upstream-docker-pods"
+    authors:
+    - family-names: Mobley
+      given-names: William
+    - family-names: Osorio
+      given-names: Maximiliano
+    - family-names: Krendelev
+      given-names: Vlad
+  - type: software
+    title: "upstream-ui-pods: Upstream UI"
+    repository-code: "https://github.com/wmobley/upstream-ui-pods"
+    authors:
+    - family-names: Mobley
+      given-names: William
+    - family-names: Osorio
+      given-names: Maximiliano
+    - family-names: Krendelev
+      given-names: Vlad
+  - type: software
+    title: "upstream-sdk: Upstream Python SDK"
+    repository-code: "https://github.com/In-For-Disaster-Analytics/upstream-sdk"
+    authors:
+    - family-names: Mobley
+      given-names: William
+    - family-names: Osorio
+      given-names: Maximiliano
+  - type: software
+    title: "upstream-python-api-client: Upstream Python API Client"
+    repository-code: "https://github.com/In-For-Disaster-Analytics/upstream-python-api-client"
+    authors:
+    - family-names: Mobley
+      given-names: William
+    - family-names: Osorio
+      given-names: Maximiliano

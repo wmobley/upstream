@@ -1,0 +1,1013 @@
+[
+  {
+    "pod_id": "flopydash",
+    "image": "ghcr.io/in-for-disaster-analytics/flopy-interactive-dash:main",
+    "template": "",
+    "description": "",
+    "command": [
+      "/bin/bash",
+      "-c",
+      "gunicorn --bind 0.0.0.0:8050 dash_app:server"
+    ],
+    "arguments": null,
+    "environment_variables": {
+      "FLOPY_DATA_DIR": "ckan_data",
+      "FLOPY_OUTPUT_WEL": "barton_springs_updated.wel",
+      "FLOPY_CKAN_URL": "https://ckan.tacc.utexas.edu"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": 43200,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 8050,
+        "url": "flopydash.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": "2026-04-02T05:11:54.534958",
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:10:37.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:11:09.509486",
+    "update_ts": "2026-04-01T17:11:09.509582",
+    "start_instance_ts": "2026-04-01T17:11:54.534958"
+  },
+  {
+    "pod_id": "disaster",
+    "image": "ghcr.io/wmobley/upstream-ui-pods:main",
+    "template": "",
+    "description": "disaster ui frontend",
+    "command": null,
+    "arguments": null,
+    "environment_variables": {
+      "VITE_UPSTREAM_API_URL": "https://infordisaster.pods.portals.tapis.io",
+      "VITE_CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "VITE_TAPIS_BASE_URL": "https://portals.tapis.io",
+      "VITE_TAPIS_PODS_BASE_URL": "https://portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 80,
+        "url": "disaster.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:20:46.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:21:18.938380",
+    "update_ts": "2026-04-01T17:21:18.938469",
+    "start_instance_ts": "2026-04-01T17:21:20.261216"
+  },
+  {
+    "pod_id": "upstream",
+    "image": "ghcr.io/wmobley/upstream-ui-pods:main",
+    "template": "",
+    "description": "Upstream ui frontend",
+    "command": null,
+    "arguments": null,
+    "environment_variables": {
+      "VITE_UPSTREAM_API_URL": "https://upstreamapi.pods.portals.tapis.io",
+      "VITE_CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "VITE_TAPIS_BASE_URL": "https://portals.tapis.io",
+      "VITE_TAPIS_PODS_BASE_URL": "https://portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 80,
+        "url": "upstream.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 256,
+      "cpu_limit": 1000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:20:44.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:21:17.081526",
+    "update_ts": "2026-04-01T17:21:17.081740",
+    "start_instance_ts": "2026-04-01T17:21:21.996504"
+  },
+  {
+    "pod_id": "flux",
+    "image": "ghcr.io/wmobley/upstream-ui-pods:main",
+    "template": "",
+    "description": "Upstream UI frontend",
+    "command": null,
+    "arguments": null,
+    "environment_variables": {
+      "VITE_UPSTREAM_API_URL": "https://fluxapi.pods.portals.tapis.io",
+      "VITE_CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "VITE_TAPIS_BASE_URL": "https://portals.tapis.io",
+      "VITE_TAPIS_PODS_BASE_URL": "https://portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 80,
+        "url": "flux.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:20:47.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:21:19.900772",
+    "update_ts": "2026-04-01T17:21:19.900852",
+    "start_instance_ts": "2026-04-01T17:21:20.962690"
+  },
+  {
+    "pod_id": "vital",
+    "image": "ghcr.io/wmobley/upstream-ui-pods:main",
+    "template": "",
+    "description": "Upstream UI frontend",
+    "command": null,
+    "arguments": null,
+    "environment_variables": {
+      "VITE_UPSTREAM_API_URL": "https://vitalapi.pods.portals.tapis.io",
+      "VITE_CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "VITE_TAPIS_BASE_URL": "https://portals.tapis.io",
+      "VITE_TAPIS_PODS_BASE_URL": "https://portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 80,
+        "url": "vital.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:20:45.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:21:17.995857",
+    "update_ts": "2026-04-01T17:21:17.995980",
+    "start_instance_ts": "2026-04-01T17:21:22.526668"
+  },
+  {
+    "pod_id": "disasterpostgres",
+    "image": "",
+    "template": "postgres:17postgis3.5@2025-10-13-20:41:16",
+    "description": "will-mobley postgres for ghcr.io/in-for-disaster-analytics/upstream-docker",
+    "command": null,
+    "arguments": null,
+    "environment_variables": {
+      "POSTGRES_USER": "fastapi_traefik",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "POSTGRES_DB": "fastapi_traefik"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {
+      "/var/lib/postgresql/data": {
+        "type": "tapisvolume",
+        "source_id": "disastervolume",
+        "mounted_by": null,
+        "sub_path": "",
+        "read_only": false,
+        "config_content": null,
+        "config_permissions": "0644",
+        "config_filename": null,
+        "config_update_mode": "always"
+      }
+    },
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 5000,
+        "url": "disasterpostgres.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "DELETING",
+    "status_container": {},
+    "creation_ts": "2026-04-01T17:37:49.085280",
+    "update_ts": "2026-04-01T17:37:49.085358",
+    "start_instance_ts": null
+  },
+  {
+    "pod_id": "fluxapi",
+    "image": "ghcr.io/wmobley/upstream-docker-pods:main",
+    "template": "",
+    "description": "Upstream API connected to postgres pod",
+    "command": [
+      "/bin/bash",
+      "-c",
+      "alembic upgrade heads && uvicorn app.main:app --reload --host 0.0.0.0"
+    ],
+    "arguments": null,
+    "environment_variables": {
+      "DATABASE_URL": "postgresql+psycopg://fastapi_traefik:fastapi_traefik@fluxpostgres.pods.portals.tapis.io:443/fastapi_traefik",
+      "VITE_UPSTREAM_API_URL": "https://flux.pods.portals.tapis.io",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "TAS_USER": "test_user",
+      "TAS_SECRET": "test_secret",
+      "JWT_SECRET": "iHaveADogHerNameIsAcacia",
+      "ALG": "HS256",
+      "TAS_URL": "https://tas-dev.tacc.utexas.edu/api-test",
+      "ENVIRONMENT": "production",
+      "ENV": "production",
+      "CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "CKAN_TIMEOUT": "30",
+      "CKAN_ORGANIZATION": "upstream",
+      "CKAN_ADMIN_USERNAME": "dso_test",
+      "CKAN_ADMIN_API_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJMYW5RTUlxcS1RTU01Y3pkODVVd3FfR0NrMkRPOFF3RVVwNTlfTmp2NTB6MkNQemxlX0lsQXFnYXlVdklCeDN2eDAzaVc3SHlnNzIwYlE5TyIsImlhdCI6MTc2NDg3MjYzN30.YLwK-G0yBmmCwqNqyfu7OOaCDlFXeNTtPSVRuIFCVyA",
+      "UI_BASE_URL": "https://flux.pods.portals.tapis.io",
+      "TAPIS_BASE_URL": "https://portals.tapis.io",
+      "TAPIS_TENANT_ID": "portals",
+      "API_BASE_URL": "https://fluxapi.pods.portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 8000,
+        "url": "fluxapi.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:20:48.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:21:21.211400",
+    "update_ts": "2026-04-01T17:21:21.211459",
+    "start_instance_ts": "2026-04-01T17:21:21.493784"
+  },
+  {
+    "pod_id": "fluxpostgres",
+    "image": "postgis/postgis:17-3.5",
+    "template": "",
+    "description": "postgres for upstream-docker",
+    "command": [
+      "docker-entrypoint.sh"
+    ],
+    "arguments": [
+      "-c",
+      "ssl=on",
+      "-c",
+      "ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem",
+      "-c",
+      "ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key"
+    ],
+    "environment_variables": {
+      "POSTGRES_USER": "fastapi_traefik",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "POSTGRES_DB": "fastapi_traefik"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {
+      "/var/lib/postgresql/data": {
+        "type": "tapisvolume",
+        "source_id": "fluxvolume",
+        "mounted_by": "wmobley",
+        "sub_path": "",
+        "read_only": false,
+        "config_content": null,
+        "config_permissions": "0644",
+        "config_filename": null,
+        "config_update_mode": "always"
+      }
+    },
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "postgres",
+        "port": 5432,
+        "url": "fluxpostgres.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": false,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:37:48.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:37:51.291301",
+    "update_ts": "2026-04-01T17:37:51.291385",
+    "start_instance_ts": "2026-04-01T17:38:39.088074"
+  },
+  {
+    "pod_id": "upstreampostgres",
+    "image": "postgis/postgis:17-3.5",
+    "template": "",
+    "description": "postgres for upstream-docker",
+    "command": [
+      "docker-entrypoint.sh"
+    ],
+    "arguments": [
+      "-c",
+      "ssl=on",
+      "-c",
+      "ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem",
+      "-c",
+      "ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key"
+    ],
+    "environment_variables": {
+      "POSTGRES_USER": "fastapi_traefik",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "POSTGRES_DB": "fastapi_traefik"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {
+      "/var/lib/postgresql/data": {
+        "type": "tapisvolume",
+        "source_id": "upstreamvolume",
+        "mounted_by": "wmobley",
+        "sub_path": "",
+        "read_only": false,
+        "config_content": null,
+        "config_permissions": "0644",
+        "config_filename": null,
+        "config_update_mode": "always"
+      }
+    },
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "postgres",
+        "port": 5432,
+        "url": "upstreampostgres.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": false,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:37:18.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:37:50.404259",
+    "update_ts": "2026-04-01T17:37:50.404349",
+    "start_instance_ts": "2026-04-01T17:38:08.481575"
+  },
+  {
+    "pod_id": "vitalpostgres",
+    "image": "postgis/postgis:17-3.5",
+    "template": "",
+    "description": "postgres for upstream-docker",
+    "command": [
+      "docker-entrypoint.sh"
+    ],
+    "arguments": [
+      "-c",
+      "ssl=on",
+      "-c",
+      "ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem",
+      "-c",
+      "ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key"
+    ],
+    "environment_variables": {
+      "POSTGRES_USER": "fastapi_traefik",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "POSTGRES_DB": "fastapi_traefik"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {
+      "/var/lib/postgresql/data": {
+        "type": "tapisvolume",
+        "source_id": "vitalvolume",
+        "mounted_by": "wmobley",
+        "sub_path": "",
+        "read_only": false,
+        "config_content": null,
+        "config_permissions": "0644",
+        "config_filename": null,
+        "config_update_mode": "always"
+      }
+    },
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "postgres",
+        "port": 5432,
+        "url": "vitalpostgres.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [],
+        "cors_allow_headers": [],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": false,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T17:37:20.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T17:37:52.233285",
+    "update_ts": "2026-04-01T17:37:52.233545",
+    "start_instance_ts": "2026-04-01T17:38:09.103307"
+  },
+  {
+    "pod_id": "upstreamapi",
+    "image": "ghcr.io/wmobley/upstream-docker-pods:main",
+    "template": "",
+    "description": "upstreamapi connected to upstreampostgres pod https://github.com/In-For-Disaster-Analytics/upstream-docker/blob/main/docker-compose.yml",
+    "command": [
+      "/bin/bash",
+      "-c",
+      "alembic upgrade heads && uvicorn app.main:app --reload --host 0.0.0.0"
+    ],
+    "arguments": null,
+    "environment_variables": {
+      "DATABASE_URL": "postgresql+psycopg://fastapi_traefik:fastapi_traefik@upstreampostgres.pods.portals.tapis.io:443/fastapi_traefik",
+      "VITE_UPSTREAM_API_URL": "https://upstream.pods.portals.tapis.io",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "JWT_SECRET": "iHaveADogHerNameIsAcacia",
+      "ALG": "HS256",
+      "TAS_URL": "https://tas-dev.tacc.utexas.edu/api-test",
+      "ENVIRONMENT": "production",
+      "ENV": "production",
+      "CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "CKAN_TIMEOUT": "30",
+      "UI_BASE_URL": "https://upstream.pods.portals.tapis.io",
+      "TAPIS_BASE_URL": "https://portals.tapis.io",
+      "TAPIS_TENANT_ID": "portals",
+      "API_BASE_URL": "https://upstreamapi.pods.portals.tapis.io",
+      "CKAN_ADMIN_API_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJMYW5RTUlxcS1RTU01Y3pkODVVd3FfR0NrMkRPOFF3RVVwNTlfTmp2NTB6MkNQemxlX0lsQXFnYXlVdklCeDN2eDAzaVc3SHlnNzIwYlE5TyIsImlhdCI6MTc2NDg3MjYzN30.YLwK-G0yBmmCwqNqyfu7OOaCDlFXeNTtPSVRuIFCVyA"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 8000,
+        "url": "upstreamapi.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [
+          "GET",
+          "POST",
+          "OPTIONS",
+          "DELETE",
+          "PUT",
+          "HEAD",
+          "PATCH"
+        ],
+        "cors_allow_headers": [
+          "content-type",
+          "x-tapis-token",
+          "authorization"
+        ],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 1000,
+      "cpu_limit": 4000,
+      "mem_request": 1000,
+      "mem_limit": 6044,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T18:04:58.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T18:05:30.884228",
+    "update_ts": "2026-04-01T18:05:30.884318",
+    "start_instance_ts": "2026-04-01T18:05:43.730958"
+  },
+  {
+    "pod_id": "vitalapi",
+    "image": "ghcr.io/wmobley/upstream-docker-pods:main",
+    "template": "",
+    "description": "Upstream API connected to postgres pod",
+    "command": [
+      "/bin/bash",
+      "-c",
+      "alembic upgrade heads && uvicorn app.main:app --reload --host 0.0.0.0"
+    ],
+    "arguments": null,
+    "environment_variables": {
+      "DATABASE_URL": "postgresql+psycopg://fastapi_traefik:fastapi_traefik@vitalpostgres.pods.portals.tapis.io:443/fastapi_traefik",
+      "VITE_UPSTREAM_API_URL": "https://vital.pods.portals.tapis.io",
+      "POSTGRES_PASSWORD": "fastapi_traefik",
+      "TAS_USER": "test_user",
+      "TAS_SECRET": "test_secret",
+      "JWT_SECRET": "iHaveADogHerNameIsAcacia",
+      "ALG": "HS256",
+      "TAS_URL": "https://tas-dev.tacc.utexas.edu/api-test",
+      "ENVIRONMENT": "production",
+      "ENV": "production",
+      "CKAN_URL": "https://ckan.tacc.utexas.edu",
+      "CKAN_TIMEOUT": "30",
+      "CKAN_ORGANIZATION": "upstream",
+      "CKAN_ADMIN_USERNAME": "dso_test",
+      "CKAN_ADMIN_API_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJMYW5RTUlxcS1RTU01Y3pkODVVd3FfR0NrMkRPOFF3RVVwNTlfTmp2NTB6MkNQemxlX0lsQXFnYXlVdklCeDN2eDAzaVc3SHlnNzIwYlE5TyIsImlhdCI6MTc2NDg3MjYzN30.YLwK-G0yBmmCwqNqyfu7OOaCDlFXeNTtPSVRuIFCVyA",
+      "UI_BASE_URL": "https://vital.pods.portals.tapis.io",
+      "TAPIS_BASE_URL": "https://portals.tapis.io",
+      "TAPIS_TENANT_ID": "portals",
+      "API_BASE_URL": "https://vitalapi.pods.portals.tapis.io"
+    },
+    "secret_map": {},
+    "status_requested": "ON",
+    "volume_mounts": {},
+    "time_to_stop_default": -1,
+    "time_to_stop_instance": null,
+    "networking": {
+      "default": {
+        "protocol": "http",
+        "port": 8000,
+        "url": "vitalapi.pods.portals.tapis.io",
+        "ip_allow_list": [],
+        "tapis_auth": false,
+        "tapis_auth_response_headers": {},
+        "tapis_auth_allowed_users": [
+          "*"
+        ],
+        "tapis_auth_return_path": "/",
+        "tapis_auth_excluded_paths": [],
+        "tapis_auth_excluded_path_regex": [],
+        "cors_allow_origins": [],
+        "cors_allow_methods": [
+          "GET",
+          "POST",
+          "OPTIONS",
+          "DELETE",
+          "PUT",
+          "HEAD",
+          "PATCH"
+        ],
+        "cors_allow_headers": [
+          "content-type",
+          "x-tapis-token",
+          "authorization"
+        ],
+        "cors_allow_credentials": false,
+        "cors_max_age": 100,
+        "tapis_ui_uri": "",
+        "tapis_ui_uri_redirect": false,
+        "tapis_ui_uri_description": "",
+        "proxy_compression": true,
+        "proxy_compression_encodings": [
+          "zstd",
+          "br",
+          "gzip"
+        ],
+        "proxy_compression_excluded_content_types": [],
+        "proxy_compression_min_response_body_bytes": 1024
+      }
+    },
+    "resources": {
+      "cpu_request": 250,
+      "cpu_limit": 2000,
+      "mem_request": 256,
+      "mem_limit": 3072,
+      "ephemeral_storage_request": -1,
+      "ephemeral_storage_limit": -1,
+      "gpus": 0
+    },
+    "compute_queue": "default",
+    "template_overrides": null,
+    "time_to_stop_ts": null,
+    "status": "AVAILABLE",
+    "status_container": {
+      "phase": "Running",
+      "start_time": "2026-04-01T18:04:39.000000",
+      "message": "Pod is running."
+    },
+    "creation_ts": "2026-04-01T18:05:31.555132",
+    "update_ts": "2026-04-01T18:05:31.555244",
+    "start_instance_ts": "2026-04-01T18:05:44.367381"
+  }
+]

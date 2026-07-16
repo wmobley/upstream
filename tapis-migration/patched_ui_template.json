@@ -1,0 +1,67 @@
+{
+  "pod_id": "upstream",
+  "image": "ghcr.io/wmobley/upstream-ui-pods:main",
+  "template": "",
+  "description": "Upstream ui frontend",
+  "environment_variables": {
+    "VITE_UPSTREAM_API_URL": "https://upstreamapi.pods.portals.tapis.io",
+    "VITE_CKAN_URL": "https://ckan.tacc.utexas.edu",
+    "VITE_TAPIS_BASE_URL": "https://portals.tapis.io",
+    "VITE_TAPIS_PODS_BASE_URL": "https://portals.tapis.io"
+  },
+  "secret_map": {},
+  "status_requested": "ON",
+  "volume_mounts": {},
+  "time_to_stop_default": -1,
+  "networking": {
+    "default": {
+      "protocol": "http",
+      "port": 80,
+      "url": "upstream.pods.portals.tapis.io",
+      "ip_allow_list": [],
+      "tapis_auth": false,
+      "tapis_auth_response_headers": {},
+      "tapis_auth_allowed_users": [
+        "*"
+      ],
+      "tapis_auth_return_path": "/",
+      "tapis_auth_excluded_paths": [],
+      "tapis_auth_excluded_path_regex": [],
+      "cors_allow_origins": [],
+      "cors_allow_methods": [],
+      "cors_allow_headers": [],
+      "cors_allow_credentials": false,
+      "cors_max_age": 100,
+      "tapis_ui_uri": "",
+      "tapis_ui_uri_redirect": false,
+      "tapis_ui_uri_description": "",
+      "proxy_compression": true,
+      "proxy_compression_encodings": [
+        "zstd",
+        "br",
+        "gzip"
+      ],
+      "proxy_compression_excluded_content_types": [],
+      "proxy_compression_min_response_body_bytes": 1024
+    }
+  },
+  "resources": {
+    "cpu_request": 256,
+    "cpu_limit": 1000,
+    "mem_request": 256,
+    "mem_limit": 3072,
+    "ephemeral_storage_request": -1,
+    "ephemeral_storage_limit": -1,
+    "gpus": 0
+  },
+  "compute_queue": "default",
+  "status": "AVAILABLE",
+  "status_container": {
+    "phase": "Running",
+    "start_time": "2026-03-30T21:04:31.000000",
+    "message": "Pod is running."
+  },
+  "creation_ts": "2025-11-06T17:03:01.562883",
+  "update_ts": "2025-11-06T17:03:01.562973",
+  "start_instance_ts": "2026-03-30T21:05:05.138203"
+}

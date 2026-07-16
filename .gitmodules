@@ -1,0 +1,15 @@
+[submodule "upstream-ui"]
+	path = upstream-ui
+	url = https://github.com/wmobley/upstream-ui-pods.git
+
+[submodule "upstream-docker-pods"]
+	path = upstream-docker-pods
+	url = https://github.com/wmobley/upstream-docker-pods.git
+
+[submodule "upstream-python-api-client"]
+	path = upstream-python-api-client
+	url = https://github.com/In-For-Disaster-Analytics/upstream-python-api-client.git
+
+[submodule "upstream-sdk"]
+	path = upstream-sdk
+	url = https://github.com/In-For-Disaster-Analytics/upstream-sdk.git

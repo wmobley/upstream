@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.coverage
+coverage.xml
+.mypy_cache/
+.pytest_cache/
+
+# Scratch / logs
+logs/
+curl.log
+curl.out
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Database dumps (potentially contain real data)
+tapis-migration/*.sql
+
+# macOS
+.DS_Store
+
+# Editor
+.claude/

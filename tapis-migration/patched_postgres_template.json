@@ -1,0 +1,86 @@
+{
+  "pod_id": "upstreampostgres",
+  "image": "postgis/postgis:17-3.5",
+  "template": "",
+  "description": "postgres for upstream-docker",
+  "command": [
+    "docker-entrypoint.sh"
+  ],
+  "arguments": [
+    "-c",
+    "ssl=on",
+    "-c",
+    "ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem",
+    "-c",
+    "ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key"
+  ],
+  "environment_variables": {
+    "POSTGRES_USER": "fastapi_traefik",
+    "POSTGRES_PASSWORD": "fastapi_traefik",
+    "POSTGRES_DB": "fastapi_traefik"
+  },
+  "secret_map": {},
+  "status_requested": "ON",
+  "volume_mounts": {
+    "/var/lib/postgresql/data": {
+      "type": "tapisvolume",
+      "source_id": "upstreamvolume",
+      "sub_path": "",
+      "read_only": false,
+      "config_permissions": "0644",
+      "config_update_mode": "always"
+    }
+  },
+  "time_to_stop_default": -1,
+  "networking": {
+    "default": {
+      "protocol": "postgres",
+      "port": 5432,
+      "url": "upstreampostgres.pods.portals.tapis.io",
+      "ip_allow_list": [],
+      "tapis_auth": false,
+      "tapis_auth_response_headers": {},
+      "tapis_auth_allowed_users": [
+        "*"
+      ],
+      "tapis_auth_return_path": "/",
+      "tapis_auth_excluded_paths": [],
+      "tapis_auth_excluded_path_regex": [],
+      "cors_allow_origins": [],
+      "cors_allow_methods": [],
+      "cors_allow_headers": [],
+      "cors_allow_credentials": false,
+      "cors_max_age": 100,
+      "tapis_ui_uri": "",
+      "tapis_ui_uri_redirect": false,
+      "tapis_ui_uri_description": "",
+      "proxy_compression": false,
+      "proxy_compression_encodings": [
+        "zstd",
+        "br",
+        "gzip"
+      ],
+      "proxy_compression_excluded_content_types": [],
+      "proxy_compression_min_response_body_bytes": 1024
+    }
+  },
+  "resources": {
+    "cpu_request": 250,
+    "cpu_limit": 2000,
+    "mem_request": 256,
+    "mem_limit": 3072,
+    "ephemeral_storage_request": -1,
+    "ephemeral_storage_limit": -1,
+    "gpus": 0
+  },
+  "compute_queue": "default",
+  "status": "AVAILABLE",
+  "status_container": {
+    "phase": "Running",
+    "start_time": "2026-03-24T20:05:27.000000",
+    "message": "Pod is running."
+  },
+  "creation_ts": "2025-12-04T19:03:41.095523",
+  "update_ts": "2025-12-04T19:03:41.095641",
+  "start_instance_ts": "2026-03-24T20:07:42.635196"
+}
