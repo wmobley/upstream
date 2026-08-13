@@ -65,4 +65,4 @@ If you use Upstream in your research, please cite it using the information in [C
 
 ## License
 
-See individual component repositories for license information.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
