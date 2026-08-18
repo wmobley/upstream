@@ -22,3 +22,6 @@ tapis-migration/*.sql
 
 # Editor
 .claude/
+
+# Local tooling state (drift detection worktrees)
+.drift/

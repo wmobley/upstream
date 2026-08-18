@@ -1,0 +1,1366 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-07-16T18:19:37.739Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Campaign/_components/CampaignDashboard/CampaignDashboard.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:19:37.740Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-07-16T18:20:13.928Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/StationDashboard/StationDashboard.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:20:13.928Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-07-16T18:20:28.030Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/StationDashboard/StationDashboard.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:20:28.030Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-07-16T18:41:07.426Z",
+      "error_message": "Wrong reference: ListNotesResponse should be NoteUpdate",
+      "file": "upstream-docker-pods/app/services/note_service.py",
+      "root_cause": "Used \"ListNotesResponse\" instead of \"NoteUpdate\"",
+      "fix": "Changed ListNotesResponse → NoteUpdate",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:41:07.426Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-07-16T18:41:19.942Z",
+      "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
+      "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_notes.py",
+      "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
+      "fix": "Changed ListNotesResponse → NoteItem",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:41:19.942Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-07-16T18:41:30.829Z",
+      "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
+      "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_station_notes.py",
+      "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
+      "fix": "Changed ListNotesResponse → NoteItem",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:41:30.829Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-07-16T18:41:42.241Z",
+      "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
+      "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_station_sensor_measurement_notes.py",
+      "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
+      "fix": "Changed ListNotesResponse → NoteItem",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:41:42.241Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-07-16T18:55:14.933Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/hooks/notes/useNotes.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T18:55:14.933Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-07-16T19:32:17.916Z",
+      "error_message": "Wrong reference: false should be true",
+      "file": "upstream-ui/src/app/common/Notes/NotesList.tsx",
+      "root_cause": "Used \"false\" instead of \"true\"",
+      "fix": "Changed false → true",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:32:17.916Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-07-16T19:32:23.184Z",
+      "error_message": "Wrong reference: false should be true",
+      "file": "upstream-ui/src/app/SensorDashboard/_components/MeasurementNotePanel.tsx",
+      "root_cause": "Used \"false\" instead of \"true\"",
+      "fix": "Changed false → true",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:32:23.184Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-07-16T19:38:33.964Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/hooks/notes/useNotes.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:38:33.964Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-07-16T19:38:49.166Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/SensorDashboard/SensorDashboard.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:38:49.166Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-07-16T19:38:57.351Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/SensorDashboard/SensorDashboard.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:38:57.351Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-07-16T19:39:24.709Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/components/ChartTooltip.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:39:24.709Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-07-16T19:41:57.183Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:41:57.183Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-07-16T19:42:03.147Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:42:03.147Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-07-16T19:42:20.288Z",
+      "error_message": "Wrong reference: HeatMapProps should be onSelectMeasurement",
+      "file": "upstream-ui/src/app/HeatMap/HeatMap.tsx",
+      "root_cause": "Used \"HeatMapProps\" instead of \"onSelectMeasurement\"",
+      "fix": "Changed HeatMapProps → onSelectMeasurement",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:42:20.288Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-07-16T19:42:26.874Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/HeatMap/HeatMap.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T19:42:26.874Z"
+    },
+    {
+      "id": "bug-019",
+      "timestamp": "2026-07-16T19:42:44.118Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Sensor/viz/HeatMapViz.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: <HeatMap; measurements={data?.items || []}",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-16T19:42:53.906Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-07-17T19:43:24.089Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-07-09-unified-ui-tapis-auth-multi-instance.md",
+      "root_cause": "Had 's permission level on the stack (`",
+      "fix": "Changed to 's row in that project'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:43:24.089Z"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-07-17T19:50:51.030Z",
+      "error_message": "Missing error handling in function",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:50:51.030Z"
+    },
+    {
+      "id": "bug-022",
+      "timestamp": "2026-07-17T19:51:02.839Z",
+      "error_message": "Missing guard clause",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "No early return/throw for edge case: result.status === 'fulfilled'",
+      "fix": "Added guard clause: if (result.status === 'fulfilled')",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:51:02.839Z"
+    },
+    {
+      "id": "bug-023",
+      "timestamp": "2026-07-17T19:51:12.941Z",
+      "error_message": "CSS fix: PERMISSION_ORDER",
+      "file": "upstream-ui/src/app/_Layout/_components/Header/_components/ProjectDropdown.tsx",
+      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-17T19:51:18.886Z"
+    },
+    {
+      "id": "bug-024",
+      "timestamp": "2026-07-17T19:54:02.112Z",
+      "error_message": "Missing await",
+      "file": "upstream-docker-pods/tests/api/dependencies/test_auth.py",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:54:02.112Z"
+    },
+    {
+      "id": "bug-025",
+      "timestamp": "2026-07-17T19:54:50.401Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/tests/api/v1/routes/test_user_roles.py",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→8 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:54:50.401Z"
+    },
+    {
+      "id": "bug-026",
+      "timestamp": "2026-07-17T19:59:07.427Z",
+      "error_message": "Function not marked async",
+      "file": "upstream-ui/.wolf/cerebrum.md",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T19:59:07.427Z"
+    },
+    {
+      "id": "bug-027",
+      "timestamp": "2026-07-17T20:27:34.737Z",
+      "error_message": "Wrong operator: ?? should be ===",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "Used \"??\" instead of \"===\"",
+      "fix": "Changed operator ?? → ===",
+      "tags": [
+        "auto-detected",
+        "operator-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:27:34.737Z"
+    },
+    {
+      "id": "bug-028",
+      "timestamp": "2026-07-17T20:27:44.080Z",
+      "error_message": "CSS fix: tapisToken",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { → string): Promise<ProjectInstance[]> {",
+      "fix": "Changed tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { → string): Promise<ProjectInstance[]> {",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:27:44.080Z"
+    },
+    {
+      "id": "bug-029",
+      "timestamp": "2026-07-17T20:27:56.965Z",
+      "error_message": "Missing guard clause",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "No early return/throw for edge case: result.status === 'fulfilled'",
+      "fix": "Added guard clause: if (result.status === 'fulfilled')",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:27:56.965Z"
+    },
+    {
+      "id": "bug-030",
+      "timestamp": "2026-07-17T20:28:02.885Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 4→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:28:02.885Z"
+    },
+    {
+      "id": "bug-031",
+      "timestamp": "2026-07-17T20:28:13.467Z",
+      "error_message": "CSS fix: PERMISSION_ORDER",
+      "file": "upstream-ui/src/app/_Layout/_components/Header/_components/ProjectDropdown.tsx",
+      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-17T20:28:19.348Z"
+    },
+    {
+      "id": "bug-032",
+      "timestamp": "2026-07-17T20:29:37.752Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-docker-pods/docs/design/2026-07-09-unified-ui-tapis-auth-multi-instance.md",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:29:37.752Z"
+    },
+    {
+      "id": "bug-033",
+      "timestamp": "2026-07-17T20:30:03.691Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/docs/design/2026-07-09-unified-ui-tapis-auth-multi-instance.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→6 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-17T20:30:03.691Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-07-20T15:55:03.708Z",
+      "error_message": "CSS fix: hover",
+      "file": "upstream-ui/src/app/common/PublishButton/PublishButton.tsx",
+      "root_cause": "hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] → bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
+      "fix": "Changed hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] → bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T15:55:03.708Z"
+    },
+    {
+      "id": "bug-035",
+      "timestamp": "2026-07-20T17:03:24.709Z",
+      "error_message": "Missing guard clause",
+      "file": "upstream-ui/src/app/LineConfidenceChart/components/MainChart.tsx",
+      "root_cause": "No early return/throw for edge case: !points || points.length === 0",
+      "fix": "Added guard clause: if (!points || points.length === 0)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-20T17:03:24.709Z"
+    },
+    {
+      "id": "bug-036",
+      "timestamp": "2026-07-20T17:04:01.684Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/components/MainChart.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: if (!renderDataPoints || !allPoints || allPoints.length === ; if (tooltipPos && onPointSelect) {",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-20T17:04:18.976Z"
+    },
+    {
+      "id": "bug-037",
+      "timestamp": "2026-07-20T17:06:32.641Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→5 lines (2 removed) | Also: selectedMeasurementId: number | null;; onSelectMeasurementForNote: (id: number) => void; | Also: interface LineConfidenceContentProps {; campaignId: string;",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-07-20T17:07:36.226Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-07-21T20:53:31.123Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/.wolf/buglog.json",
+      "root_cause": "Had \"Not yet applied — investigated and a plan was pre",
+      "fix": "Changed to \"Reverted the cors_allow_origins/methods/headers/c",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-21T20:53:31.123Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-07-22T01:43:25.635Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/app/services/pods_service.py",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 17→43 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T01:43:25.635Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-07-22T12:47:18.969Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/app/services/pods_service.py",
+      "root_cause": "19 lines replaced/restructured",
+      "fix": "Rewrote 26→10 lines (19 removed) | Also: # CORS is configured via a follow-up PUT (see _boo; # create payload above: Tapis Pods gates any write | Also: def _fetch_service_token(self) -> str:; username = self.settings.TAPIS_SERVICE_USERNAME or",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-07-22T12:50:19.130Z"
+    },
+    {
+      "id": "bug-041",
+      "timestamp": "2026-07-22T12:47:55.667Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/app/api/v1/routes/pods.py",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→6 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T12:47:55.667Z"
+    },
+    {
+      "id": "bug-042",
+      "timestamp": "2026-07-22T12:50:30.773Z",
+      "error_message": "Wrong return value",
+      "file": "../../../../private/tmp/claude-503/-Volumes-Macintosh-HD---Data-Github-upstream/4542e859-8e98-4a2b-aa94-4a19498f324a/scratchpad/remove-cors-main/app/api/v1/routes/pods.py",
+      "root_cause": "Was returning: {\"status\": \"requested\", \"created\": created, \"cors_",
+      "fix": "Now returns: {\"status\": \"requested\", \"created\": created}",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T12:50:30.773Z"
+    },
+    {
+      "id": "bug-043",
+      "timestamp": "2026-07-22T12:52:46.898Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/.wolf/buglog.json",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→5 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T12:52:46.898Z"
+    },
+    {
+      "id": "bug-044",
+      "timestamp": "2026-07-22T13:10:00.822Z",
+      "error_message": "Wrong reference: try should be role",
+      "file": "upstream-docker-pods/app/api/v1/routes/root.py",
+      "root_cause": "Used \"try\" instead of \"role\"",
+      "fix": "Changed try → role",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T13:10:00.822Z"
+    },
+    {
+      "id": "bug-045",
+      "timestamp": "2026-07-22T13:14:28.354Z",
+      "error_message": "Significant refactor of ",
+      "file": "../../../../private/tmp/claude-503/-Volumes-Macintosh-HD---Data-Github-upstream/4542e859-8e98-4a2b-aa94-4a19498f324a/scratchpad/tas-main/app/api/v1/routes/root.py",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 12→9 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T13:14:28.354Z"
+    },
+    {
+      "id": "bug-046",
+      "timestamp": "2026-07-22T19:53:40.582Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Admin/index.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: <section id=\"admin-pod-visibility-section\" className=\"rounde; <div id=\"admin-pod-visibility-header\" className=\"border-b bo",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-22T19:54:20.070Z"
+    },
+    {
+      "id": "bug-047",
+      "timestamp": "2026-07-22T19:53:55.713Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "upstream-ui/src/app/Admin/index.tsx",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-22T19:53:55.713Z"
+    },
+    {
+      "id": "bug-048",
+      "timestamp": "2026-07-23T15:15:18.950Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/LineConfidenceChart/components/MeasurementNoteCallout.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:15:18.950Z"
+    },
+    {
+      "id": "bug-049",
+      "timestamp": "2026-07-23T15:31:46.149Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
+      "root_cause": "Had 's new optional props accidentally change behavior",
+      "fix": "Changed to 's new optional props accidentally change behavior",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-07-23T15:31:51.770Z"
+    },
+    {
+      "id": "bug-050",
+      "timestamp": "2026-07-23T15:34:35.409Z",
+      "error_message": "Wrong reference: Draft should be In",
+      "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
+      "root_cause": "Used \"Draft\" instead of \"In\"",
+      "fix": "Changed Draft → In",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:34:35.409Z"
+    },
+    {
+      "id": "bug-051",
+      "timestamp": "2026-07-23T15:35:09.083Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
+      "root_cause": "8 lines replaced/restructured",
+      "fix": "Rewrote 19→23 lines (8 removed) | Also: - `NoteCreate`/`NoteUpdate` gain an optional `loca; - `NoteItem` gains an optional `location: Point |  | Also: 1. **Clear semantics on update:** should `PATCH` o; 2. **Marker visual design:** exact color/icon choi",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-07-23T15:36:09.116Z"
+    },
+    {
+      "id": "bug-052",
+      "timestamp": "2026-07-23T15:40:01.203Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/app/services/note_service.py",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 10→22 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:40:01.203Z"
+    },
+    {
+      "id": "bug-053",
+      "timestamp": "2026-07-23T15:48:31.539Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/hooks/notes/useNotes.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:48:31.539Z"
+    },
+    {
+      "id": "bug-054",
+      "timestamp": "2026-07-23T15:49:29.484Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/components/MeasurementNoteCallout.tsx",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 24→35 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:49:29.484Z"
+    },
+    {
+      "id": "bug-055",
+      "timestamp": "2026-07-23T15:51:37.607Z",
+      "error_message": "Wrong reference: Approved should be Implemented",
+      "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
+      "root_cause": "Used \"Approved\" instead of \"Implemented\"",
+      "fix": "Changed Approved → Implemented",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T15:51:37.607Z"
+    },
+    {
+      "id": "bug-056",
+      "timestamp": "2026-07-23T17:59:56.307Z",
+      "error_message": "CSS fix: data",
+      "file": "upstream-ui/src/app/Campaign/_components/CampaignDashboard/CampaignDashboard.tsx",
+      "root_cause": "data: notesData, isLoading: notesLoading → noteLocationsData",
+      "fix": "Changed data: notesData, isLoading: notesLoading → noteLocationsData",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T17:59:56.307Z"
+    },
+    {
+      "id": "bug-057",
+      "timestamp": "2026-07-23T18:00:03.436Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Campaign/_components/CampaignDashboard/CampaignDashboard.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-23T18:00:03.436Z"
+    },
+    {
+      "id": "bug-058",
+      "timestamp": "2026-07-31T00:00:00.000Z",
+      "error_message": "CSV measurement upload fails in UI with generic 'Error: Response returned an error code'",
+      "file": "upstream-ui/docker-entrypoint.sh",
+      "root_cause": "nginx.conf includes /etc/nginx/conf.d/api-proxy.inc* as a glob (silently matches nothing if absent). docker-entrypoint.sh only writes api-proxy.inc when UPSTREAM_API_PROXY_URL is set. When that env var is missing on the deployed pod, /api/v1/* requests fall through to the catch-all `location /` (try_files $uri $uri/ /index.html) and nginx returns the SPA shell (200 OK, index.html) instead of proxying to the backend. Confirmed in nginx access logs: every /api/v1/* and SPA route request returned exactly '200 502' (502 bytes = index.html size), while /tapis-proxy/v3/pods (always generated, unconditional) returned real proxied payloads. The generated OpenAPI TS client then fails to parse the HTML body as JSON and surfaces a generic error.",
+      "fix": "Not yet fixed — need to verify/set UPSTREAM_API_PROXY_URL on the upstream-ui pod deployment so docker-entrypoint.sh generates api-proxy.inc. No code change identified as required unless the env var is confirmed absent/wrong.",
+      "tags": [
+        "nginx",
+        "proxy",
+        "deployment",
+        "upload",
+        "env-var",
+        "upstream-ui"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "id": "bug-059",
+      "timestamp": "2026-07-31T15:40:14.338Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/hooks/api/useConfiguration.ts",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 19→24 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-31T15:40:14.338Z"
+    },
+    {
+      "id": "bug-060",
+      "timestamp": "2026-07-31T15:46:55.573Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/hooks/station/useUploadData.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-31T15:46:55.573Z"
+    },
+    {
+      "id": "bug-061",
+      "timestamp": "2026-08-04T13:42:52.724Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "Had `POST /v3/oauth2/tokens?grant_type=refresh_token`",
+      "fix": "Changed to 's own API or schema.** This reuses Tapis'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T13:42:52.724Z"
+    },
+    {
+      "id": "bug-062",
+      "timestamp": "2026-08-04T13:48:07.473Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 15→16 lines (2 removed) | Also: **How to schedule:**; 1. In `AuthContext.tsx`, after `storeTapisTokens() | Also: // Update tokens with new values; : refreshTokenObj.access_token; | Also: 1. **Feature flag (optional):** Add an env var `VI; - Build upstream-ui with changes. | Also: 4. **Concurrent refresh race:** Multiple API reque; 5. **Session durability vs. security:** Silent ref | Also: **Investigated and rejected because:**; - Tapis OAuth2 client registration payload only in | Also: 2. **Fallback: On-demand refresh on 401** (if impl; 3. **Failure: Refresh token revoked**",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 7,
+      "last_seen": "2026-08-04T13:49:34.001Z"
+    },
+    {
+      "id": "bug-063",
+      "timestamp": "2026-08-04T13:48:43.344Z",
+      "error_message": "Function not marked async",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier | Also: ### [2026-08-04a] Supersede \"no silent refresh\" decision fro; - User pain (mid-workflow logout) is real and blocking data ",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-04T13:49:53.638Z"
+    },
+    {
+      "id": "bug-064",
+      "timestamp": "2026-08-04T14:00:03.643Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 45→62 lines (7 removed) | Also: 1. **Tapis refresh response shape:** What is the e; - Is the response wrapped in `{ result: {...} }` o",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-04T14:00:21.389Z"
+    },
+    {
+      "id": "bug-065",
+      "timestamp": "2026-08-04T14:00:37.314Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "Had `result`",
+      "fix": "Changed to 's bundled OpenAPI spec and reference implementati",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T14:00:37.314Z"
+    },
+    {
+      "id": "bug-066",
+      "timestamp": "2026-08-04T14:11:48.312Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/utils/tapisAuth.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T14:11:48.312Z"
+    },
+    {
+      "id": "bug-067",
+      "timestamp": "2026-08-04T14:12:49.866Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "Had ` (the pure-frontend OAuth2-callback path, separat",
+      "fix": "Changed to ` (the pure-frontend OAuth2-callback path, separat",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T14:12:49.866Z"
+    },
+    {
+      "id": "bug-068",
+      "timestamp": "2026-08-04T14:48:30.347Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/app/api/v1/routes/root.py",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 7→3 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T14:48:30.347Z"
+    },
+    {
+      "id": "bug-069",
+      "timestamp": "2026-08-04T15:25:48.362Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→15 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T15:25:48.362Z"
+    },
+    {
+      "id": "bug-070",
+      "timestamp": "2026-08-04T17:16:35.823Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-sdk/pyproject.toml",
+      "root_cause": "Had \"3.9\"",
+      "fix": "Changed to \"3.10\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "toml"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T17:16:35.823Z"
+    },
+    {
+      "id": "bug-071",
+      "timestamp": "2026-08-04T17:19:04.506Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-sdk/upstream/notes.py",
+      "root_cause": "Had \"/api/v1/campaigns/{campaign_id}/stations/{station",
+      "fix": "Changed to \"/api/v1/campaigns/{campaign_id}/stations/{station",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T17:19:04.506Z"
+    },
+    {
+      "id": "bug-072",
+      "timestamp": "2026-08-04T18:00:49.226Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/examples/upload_and_annotate_demo.py",
+      "root_cause": "Had \"POINT({measurement.geometry.coordinates[0]} {meas",
+      "fix": "Changed to \"POINT({lon} {lat})\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T18:00:49.226Z"
+    },
+    {
+      "id": "bug-073",
+      "timestamp": "2026-08-04T18:11:03.907Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-sdk/pyproject.toml",
+      "root_cause": "Had \"1.1.1\"",
+      "fix": "Changed to \"1.2.0\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "toml"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T18:11:03.907Z"
+    },
+    {
+      "id": "bug-074",
+      "timestamp": "2026-08-04T18:11:10.449Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-sdk/upstream/__init__.py",
+      "root_cause": "Had \"1.1.1\"",
+      "fix": "Changed to \"1.2.0\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-04T18:11:10.449Z"
+    },
+    {
+      "id": "bug-075",
+      "timestamp": "2026-08-10T14:29:36.905Z",
+      "error_message": "Significant refactor of ",
+      "file": "bethel1Base/ops/register_tapis_actor.py",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 28→41 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-10T14:29:36.905Z"
+    },
+    {
+      "id": "bug-076",
+      "timestamp": "2026-08-10T14:30:15.375Z",
+      "error_message": "Wrong reference: CRON_SCHEDULE should be cron_schedule",
+      "file": "bethel1Base/ops/register_tapis_actor.py",
+      "root_cause": "Used \"CRON_SCHEDULE\" instead of \"cron_schedule\"",
+      "fix": "Changed CRON_SCHEDULE → cron_schedule",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-10T14:30:15.375Z"
+    },
+    {
+      "id": "bug-077",
+      "timestamp": "2026-08-10T14:42:52.283Z",
+      "error_message": "Incorrect value in code",
+      "file": "tapis-postgres-backup/README.md",
+      "root_cause": "Had `bash\npython -m pytest test_backup.py\n`",
+      "fix": "Changed to `bash\npython -m pytest tests/test_backup.py\n`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-10T14:42:52.283Z"
+    },
+    {
+      "id": "bug-078",
+      "timestamp": "2026-08-10T14:59:49.004Z",
+      "error_message": "Incorrect value in code",
+      "file": "upstream-docker-pods/docs/design/2026-07-09-unified-ui-tapis-auth-multi-instance.md",
+      "root_cause": "Had `TAPIS_AUTH.md`",
+      "fix": "Changed to `docs/auth/tapis-pods-auth.md`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-10T14:59:49.004Z"
+    },
+    {
+      "id": "bug-079",
+      "timestamp": "2026-08-13T17:16:24.000Z",
+      "error_message": "Empty 400px section below station dashboard header when mobile/station type is false",
+      "file": "upstream-ui/src/app/StationDashboard/StationDashboard.tsx",
+      "root_cause": "The dashboard always renders the fixed-height map wrapper, but StatsSection returns null for static/non-mobile stations.",
+      "fix": "Removed the StationType.Mobile guard from StatsSection so the map renders for static and mobile stations alike.",
+      "tags": [
+        "ui",
+        "station-dashboard",
+        "map",
+        "conditional-rendering",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T17:16:24.000Z"
+    },
+    {
+      "id": "bug-080",
+      "timestamp": "2026-08-13T17:19:37Z",
+      "error_message": "Failed to fetch station: 404 {\"detail\":\"Access to Campaign unavailable. Improper Allocation\"} on /campaigns/5/stations/5?project=upstream while campaign detail loaded",
+      "file": "upstream-docker-pods/app/api/dependencies/pytas.py",
+      "root_cause": "CKAN organization identifiers were normalized to lowercase, but check_allocation_permission compared Campaign.allocation directly against those normalized strings.",
+      "fix": "Normalize Campaign.allocation and non-empty allocation identifiers with the same _normalize helper before exact comparison; added direct regression tests.",
+      "tags": [
+        "allocation",
+        "ckan",
+        "station-detail",
+        "authorization",
+        "fastapi"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T17:19:37Z"
+    },
+    {
+      "id": "bug-081",
+      "timestamp": "2026-08-13T17:32:07Z",
+      "error_message": "Line Confidence time series missing x-axis overview/zoom control and zoomed total does not appear",
+      "file": "upstream-ui/src/app/LineConfidenceChart/LineConfidenceChart.tsx",
+      "root_cause": "The visible OverviewChart was not rendered; only an invisible main-chart zoom overlay existed. The selectedTimeRange state was also not threaded into the all-points measurements query.",
+      "fix": "Rendered the overview chart with a d3 brush, split chart dimensions between main and overview charts, removed duplicate invisible zoom handling from MainChart, passed start/end dates to useList, and displayed the current range total in controls.",
+      "tags": [
+        "ui",
+        "line-confidence",
+        "overview",
+        "brush",
+        "zoom",
+        "measurements",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T17:32:07Z"
+    },
+    {
+      "id": "bug-082",
+      "timestamp": "2026-08-13T18:01:23Z",
+      "error_message": "SDK calls POST /api/v1/api/v1/token and receive 404 when base_url is configured with an /api/v1 suffix",
+      "file": "upstream-sdk/upstream/utils.py",
+      "root_cause": "ConfigManager normalized pod web hosts but did not normalize user-supplied API-root URLs, while AuthManager appends /api/v1 to endpoint paths internally.",
+      "fix": "Strip a terminal /api/v1 from ConfigManager.base_url while preserving deployment prefixes such as /dev; added focused regression tests.",
+      "tags": [
+        "sdk",
+        "auth",
+        "base-url",
+        "404",
+        "python"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T18:01:23Z"
+    },
+    {
+      "id": "bug-083",
+      "timestamp": "2026-08-13T18:04:59Z",
+      "error_message": "src/app/Sensor/viz/LineConfidenceViz/_components/Controls.tsx(25,5): error TS6133: 'selectedTimeRange' is declared but its value is never read.",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Controls.tsx",
+      "root_cause": "The total label was changed to a constant `Current range` label, leaving the previously destructured selectedTimeRange value unused.",
+      "fix": "Removed selectedTimeRange from the useLineConfidence destructuring; npm run build passes.",
+      "tags": [
+        "typescript",
+        "build",
+        "line-confidence",
+        "tsx"
+      ],
+      "related_bugs": [
+        "bug-081"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T18:04:59Z"
+    },
+    {
+      "id": "bug-084",
+      "timestamp": "2026-08-13T18:12:25Z",
+      "error_message": "CKAN package_create status=409 \"That URL is already in use\" repeats during SDK/API upload and publish flows without a clear user choice to rename or patch",
+      "file": "upstream-docker-pods/app/services/ckan_service.py",
+      "root_cause": "CKAN package_create conflicts were logged as generic errors before recoverability was determined, and station publish did not expose request fields for custom CKAN dataset names or explicit patching.",
+      "fix": "Added conflict-specific CKAN handling with suggested names, explicit station publish fields (`ckan_dataset_name`, `patch_existing_ckan_dataset`), and SDK wrapper support for those fields.",
+      "tags": [
+        "ckan",
+        "sdk",
+        "publish",
+        "dataset-conflict"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-13T18:12:25Z"
+    }
+  ]
+}
