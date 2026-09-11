@@ -739,3 +739,134 @@
 | 12:19 | Fixed station detail Improper Allocation 404 by normalizing CKAN allocation comparison | upstream-docker-pods/app/api/dependencies/pytas.py, upstream-docker-pods/tests/api/dependencies/test_pytas.py | `.venv/bin/python -m pytest -q` 167 passed; `.venv/bin/python -m mypy .` clean | ~22000 |
 | 13:01 | Diagnosed and fixed SDK double `/api/v1` auth URL | upstream-sdk/upstream/utils.py, upstream-sdk/tests/unit/test_config_manager.py, .wolf/buglog.json, .wolf/cerebrum.md | `python3` focused tests passed with local generated-client PYTHONPATH and coverage addopts disabled | ~18000 |
 | 13:12 | Fixed CKAN dataset-name conflict behavior and exposed patch/name controls through the SDK. | upstream-docker-pods/app/services/ckan_service.py, upstream-docker-pods/app/services/ckan_publish.py, upstream-sdk/upstream/client.py, upstream-sdk/upstream/stations.py | API tests/mypy clean; SDK unit suite clean; SDK mypy unavailable locally | ~42000 |
+| 10:34 | Traced Bethel actor incremental fetch/upload behavior | bethel1Base/fetch_tilt_telemetry.py, bethel1Base/entrypoint.sh, bethel1Base/upload_to_upstream.py, bethel1Base/ops/register_tapis_actor.py | `FETCH_MODE=missing` only checks files under `LOCAL_OUTPUT_DIR`; if `/work/bethel1Base/data/out` is not durable between stateless actor runs, every remote CSV is selected again, while upload dedupe still filters by API timestamps | ~14500 |
+| 11:00 | Implemented Bethel watermark incremental ingest | bethel1Base/fetch_tilt_telemetry.py, bethel1Base/upstream_watermark.py, bethel1Base/upload_to_upstream.py, bethel1Base/entrypoint.sh, bethel1Base/tests/* | Added API-watermark file selection, manifest-driven transform inputs, bounded upload timestamp queries, docs, and tests; focused pytest and syntax checks pass | ~36000 |
+| 11:01 | Updated OpenWolf anatomy for Bethel files | .wolf/anatomy.md | Added concise entries for touched Bethel scripts, new watermark helper, and new tests | ~900 |
+| 19:40 | Published and replaced Bethel Tapis actor | bethel1Base/ops/register_tapis_actor.py, GHCR, Tapis actors | Pushed `ghcr.io/wmobley/bethel1base:watermark-20260820-193534`; stale actor id `zyoq4PDywXqbN` was inaccessible to `tasclient_dsso`; deleted visible old actor `zXPqA0LbGJqvk`; created `0xv3vpRMKYBXO` READY with cron `2026-08-21 05 + 1 day` | ~11000 |
+| 20:02 | Retried stale Tapis actor access with user-provided access token | Tapis actor `zyoq4PDywXqbN` | Token-authenticated GET still returned `Not authorized -- you do not have access to this actor`; no DELETE attempted | ~2200 |
+| 20:00 | Ran deployed Bethel actor and corrected image architecture | GHCR, Tapis actor `0ZajqbE1Vyxxk`, bethel1Base/ops/register_tapis_actor.py | First manual run `RmAYGeKPvEB3o` failed `exec /usr/bin/tini: exec format error`; rebuilt/pushed `watermark-20260820-2005-amd64`, recreated actor under `wmobley`, granted `tasclient_dsso` UPDATE, ran execution `0ZpaPAyB5wrgk` exit 0, and UpStream unit watermarks advanced to 2026-08-20 | ~18000 |
+| 15:10 | Updated ScienceGateways manuscript Bethel workflow text | upstream-alaska.tex | Replaced old `FETCH_MODE=missing` local-file wording with deployed watermark/overlap, manifest transform, and bounded upload dedupe behavior | ~3500 |
+| 15:32 | Updated manuscript Tapis actor evidence review | upstream-alaska.tex | Added August 24 read-only Tapis evidence for repaired actor `0ZajqbE1Vyxxk`: READY, cron enabled, five COMPLETE executions, 59-170s runtimes, latest log with 5 files/887 rows/uploads for four units | ~6200 |
+| 15:38 | Combined manuscript actor-evidence paragraphs | upstream-alaska.tex | Reworded the August 13 and August 24 Tapis observations as one as-of-August-24 validation narrative with historical baseline plus repaired current actor evidence | ~2500 |
+| 12:34 | Drafted brief reviewer reply for manuscript revisions | reviewer-response-brief.md, upstream-alaska.tex, reviewer-issues-outline.md | Added a concise response mapping current manuscript changes to reviewer concerns about reliability evidence, data integrity, claim calibration, artifacts, and limitations | ~6200 |
+| 12:38 | Added PDF page/line references to reviewer reply | reviewer-response-brief.md, upstream-alaska.pdf | Inserted a table with PDF page-specific extracted line numbers and direct quotes for each response point | ~4200 |
+| 12:57 | Split reviewer reply by reviewer | reviewer-response-brief.md | Reorganized PDF evidence into separate Reviewer 1 technical/operational responses and Reviewer 2 openness/reuse/artifact responses | ~2200 |
+| 13:43 | Refactored upstream-ui landing page around Intensive Observation Periods and updated campaign explorer heading | upstream-ui/src/app/Home/_components/UnauthenticatedLanding/UnauthenticatedLanding.tsx, upstream-ui/src/app/Home/_components/CampaignList/CampaignList.tsx | Touched-file ESLint clean; build passed; desktop/mobile browser smoke passed; full lint has unrelated pre-existing errors logged in upstream-ui bug-062 | ~18k |
+| 07:44 | Removed the public Campaign explorer promo section from upstream-ui landing page | upstream-ui/src/app/Home/_components/UnauthenticatedLanding/UnauthenticatedLanding.tsx | Focused ESLint clean; build passed; browser smoke confirmed Developer resources follows IOP capabilities | ~5k |
+| 08:15 | Updated upstream-ui IOP capabilities headline and card copy | upstream-ui/src/app/Home/_components/UnauthenticatedLanding/UnauthenticatedLanding.tsx | Focused ESLint clean; build passed; browser smoke confirmed revised copy renders | ~4k |
+| 08:23 | Applied TACC Core Styles color scheme to upstream-ui landing page | upstream-ui/tailwind.config.ts, upstream-ui/src/app/Home/_components/UnauthenticatedLanding/UnauthenticatedLanding.tsx, upstream-ui/.wolf/* | Focused ESLint clean; diff check clean; build passed; live browser computed colors and screenshot matched TACC palette | ~9k |
+| 08:28 | Updated upstream-ui landing footer label to TACC Decision Support Office and removed the old support sentence | upstream-ui/src/app/Home/_components/UnauthenticatedLanding/UnauthenticatedLanding.tsx, upstream-ui/.wolf/* | Focused ESLint clean; diff check clean | ~2k |
+| 2026-09-04 | Replaced static project/dev API URL listings with project selector/API docs discovery guidance | upstream-ui/docs/docs/concepts/projects-and-api-urls.md; upstream-ui/docs/docs/reference/environment-urls.md; upstream-ui/docs/docs/concepts/index.md; quickstarts; SDK/API docs | build/search passed | ~2k |
+| 2026-09-04 | Added docs media asset folders and visible GIF placeholder notes for key UI workflows | upstream-ui/docs/docs/assets/; web-ui guide pages; concepts/projects-and-api-urls.md | mkdocs/pagefind passed | ~2k |
+| 2026-09-04 | Fixed sensor route map only showing small amount of data | upstream-ui/src/app/SensorDashboard/_components/StatsSection.tsx | Increased limit from 500 to 500000 and downsampleThreshold from 500 to 5000 to match RouteMapViz values; ESLint + tsc clean | ~1.5k |
+
+## Session: 2026-09-05 11:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:03 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~132 |
+| 11:04 | Fixed uncaught TypeError: s.points.show is not a function (bug-093) | upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | fixed, tsc clean | ~600 |
+| 11:04 | Session end: 1 writes across 1 files (UPlotChart.tsx) | 2 reads | ~132 tok |
+| 11:09 | Session end: 1 writes across 1 files (UPlotChart.tsx) | 7 reads | ~3222 tok |
+| 11:13 | Session end: 1 writes across 1 files (UPlotChart.tsx) | 10 reads | ~8418 tok |
+| 16:17 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx | 5→6 lines | ~52 |
+| 16:17 | Added key to LineConfidenceProvider to fix stale filter/time-range state leaking across sensor navigation (bug-094) | upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx | fixed, tsc clean | ~800 |
+| 16:18 | Session end: 2 writes across 2 files (UPlotChart.tsx, LineConfidenceViz.tsx) | 10 reads | ~8470 tok |
+| 16:21 | Session end: 2 writes across 2 files (UPlotChart.tsx, LineConfidenceViz.tsx) | 10 reads | ~8470 tok |
+
+## Session: 2026-09-05 16:42
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:42 | Edited upstream-ui/docs/docs/web-ui-guide/stations/creating.md | 6→1 lines | ~16 |
+| 16:43 | Edited upstream-ui/docs/docs/web-ui-guide/stations/dashboard.md | 6→1 lines | ~19 |
+| 16:43 | Edited upstream-ui/docs/docs/web-ui-guide/stations/exporting-data.md | 6→1 lines | ~16 |
+| 16:43 | Edited upstream-ui/docs/docs/web-ui-guide/campaigns/creating.md | 6→1 lines | ~17 |
+| 16:43 | Edited upstream-ui/docs/docs/concepts/projects-and-api-urls.md | 6→1 lines | ~19 |
+| 16:43 | Session end: 5 writes across 4 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md) | 5 reads | ~853 tok |
+| 16:44 | Session end: 5 writes across 4 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md) | 5 reads | ~853 tok |
+| 16:44 | Session end: 5 writes across 4 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md) | 5 reads | ~853 tok |
+| 16:46 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | 4→9 lines | ~181 |
+| 16:47 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | added 1 condition(s) | ~41 |
+| 16:47 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~74 |
+| 16:47 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~120 |
+| 16:50 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~140 |
+| 16:50 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~187 |
+| 16:50 | Fixed uPlot setScale feedback loop causing continuous reload/never-displays (bug-095) via isProgrammaticScaleUpdate ref + u.batch() | upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | fixed, tsc clean | ~1200 |
+| 16:50 | Session end: 11 writes across 5 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 9 reads | ~7020 tok |
+| 16:54 | Created ../../../../../private/tmp/claude-502/-Users-wmobley-Documents-Github-upstream/a157d874-925e-4216-8ec0-5fec1ef0b0a6/scratchpad/probe.js | — | ~569 |
+| 16:58 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~229 |
+| 16:59 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | added optional chaining | ~76 |
+| 17:00 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | 6→8 lines | ~68 |
+| 17:01 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | 5→3 lines | ~26 |
+| 17:01 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | 4→2 lines | ~11 |
+| 17:01 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | added 1 condition(s) | ~224 |
+| 17:01 | Edited upstream-ui/src/hooks/measurements/useListConfidenceValues.ts | inline fix | ~20 |
+| 17:01 | Edited upstream-ui/src/hooks/measurements/useListConfidenceValues.ts | expanded (+6 lines) | ~177 |
+| 17:01 | Edited upstream-ui/src/hooks/measurements/useList.ts | inline fix | ~20 |
+| 17:01 | Edited upstream-ui/src/hooks/measurements/useList.ts | 3→6 lines | ~68 |
+| 17:04 | Root-caused and fixed uPlot infinite refetch/remount loop (bug-101): cursor.event guard + keepPreviousData | upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx, useListConfidenceValues.ts, useList.ts | fixed, verified via headless Playwright repro, tsc clean | ~4500 |
+| 17:04 | Session end: 22 writes across 8 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 14 reads | ~11908 tok |
+| 17:10 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | expanded (+8 lines) | ~402 |
+| 17:10 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | reduced (-6 lines) | ~316 |
+| 17:11 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx | 9→12 lines | ~204 |
+| 17:11 | Edited upstream-ui/src/app/LineConfidenceChart/LineConfidenceChart.tsx | 8→8 lines | ~115 |
+| 17:13 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | 3→2 lines | ~18 |
+| 17:13 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | added 1 condition(s) | ~161 |
+| 17:14 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx | inline fix | ~24 |
+| 17:14 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx | 3→6 lines | ~98 |
+| 17:14 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: space | ~186 |
+| 17:17 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: show | ~158 |
+| 17:18 | Session end: 32 writes across 10 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 20 reads | ~15342 tok |
+| 17:22 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | added 1 condition(s) | ~174 |
+| 17:22 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: timeFormatter | ~94 |
+| 17:23 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | modified buildSeriesConfig() | ~752 |
+| 17:23 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | 8→9 lines | ~140 |
+| 17:23 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | reduced (-12 lines) | ~53 |
+| 17:23 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: primaryColors, showLine, timeFormatter | ~172 |
+| 17:31 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | added optional chaining | ~150 |
+| 17:35 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | modified getGapThresholdMs() | ~178 |
+| 17:36 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | 11→9 lines | ~53 |
+| 17:36 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | modified if() | ~202 |
+| 17:36 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | removed 13 lines | ~22 |
+| 17:39 | Fixed critical uPlot x-axis null-corruption bug (bug-114, data squeezed to right edge) + legend Time/labels bug (bug-115) + styling cleanup (colors, axis labels, gridlines) | upstream-ui/src/app/LineConfidenceChart/*, upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx | fixed, verified visually via Playwright on 2 sensors, tsc clean | ~9000 |
+| 17:39 | Session end: 43 writes across 11 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 28 reads | ~20041 tok |
+| 17:41 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | added nullish coalescing | ~442 |
+| 17:42 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | 9→11 lines | ~77 |
+| 17:44 | Session end: 45 writes across 11 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 35 reads | ~20552 tok |
+| 17:47 | Session end: 45 writes across 11 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 38 reads | ~20552 tok |
+| 17:53 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | expanded (+7 lines) | ~188 |
+| 17:53 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: narrow | ~149 |
+| 17:55 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/context/LineConfidenceContextState.ts | 8→10 lines | ~76 |
+| 17:55 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/SensorFilteringModal.tsx | 7→8 lines | ~42 |
+| 17:55 | Edited upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/SensorFilteringModal.tsx | added nullish coalescing | ~70 |
+| 17:56 | Edited upstream-ui/src/app/LineConfidenceChart/LineConfidenceChart.tsx | 10→11 lines | ~69 |
+| 17:56 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: primaryUnits | ~336 |
+| 17:57 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | modified buildSeriesConfig() | ~253 |
+| 17:57 | Edited upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts | expanded (+11 lines) | ~633 |
+| 17:57 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: y2 | ~130 |
+| 17:57 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: show | ~345 |
+| 17:58 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | inline fix | ~12 |
+| 18:02 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | modified if() | ~272 |
+| 18:02 | Edited upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx | CSS: here | ~111 |
+| 18:04 | Fixed compare-button no-op bug (bug-122, series never added to live uPlot instance) + added dual y-axis for mismatched-unit comparisons + fixed legend overflow into footer (bug-124) | upstream-ui/src/app/LineConfidenceChart/*, SensorFilteringModal.tsx, LineConfidenceContextState.ts | fixed, verified visually via Playwright, tsc clean | ~11000 |
+| 18:04 | Session end: 59 writes across 13 files (creating.md, dashboard.md, exporting-data.md, projects-and-api-urls.md, UPlotChart.tsx) | 49 reads | ~24715 tok |
+| 09:55 | Created a publication-ready two-panel composite from the two new Upstream PTR-MS screenshots and inserted it into the manuscript with a cross-reference and caption. | Upstream/LaTeX/figs/figure3-ptrms-interface-evidence.png; Upstream/LaTeX/main.tex | Figure asset and LaTeX integration complete; pdflatex succeeds after layout adjustment. | ~900 |
+
+## Session: 2026-09-10 09:39
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:00 | Investigated tybierwagen project visibility report; traced selector and backend authorization paths | upstream-ui/src/contexts/InstanceContext.tsx; upstream-docker-pods/app/api/dependencies/auth.py; upstream-docker-pods/app/api/v1/routes/user_roles.py | Found allocation is special-case base-instance admission; vitalapi should use its own user role | ~900 |
+| 00:01 | Ran focused auth tests | upstream-docker-pods/tests | Blocked before collection because SQLAlchemy is missing in the environment | ~120 |
+| 00:02 | Searched repository logs/config for tybierwagen and vitalapi/upstream instances | local log and deployment/docs references | No tybierwagen runtime events or production pod logs are present locally; current code maps vitalapi visibility to its own role endpoint | ~300 |
+| 00:03 | Implemented brokered project discovery | upstream-docker-pods/app/services/project_discovery.py; upstream-docker-pods/app/api/v1/routes/project_instances.py; upstream-ui/src/contexts/InstanceContext.tsx | Base API now uses service credentials for Pod catalog and caller bearer for per-project roles; UI no longer depends directly on Tapis /v3/pods | ~700 |
+
+## Session: 2026-09-11 00:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:00 | Traced UI CKAN publish conflict and enabled existing-dataset patching | upstream-ui/src/hooks/station/usePublish.ts; upstream-ui/src/hooks/campaign/usePublish.ts | UI publish requests now send patchExistingCkanDataset=true so existing ingestion-created datasets can be made public | ~500 |
+| 00:01 | Validated CKAN publish UI fix | upstream-ui | Production build and diff checks passed; no frontend test script is configured | ~150 |
+| 00:02 | Ran focused CKAN URL test | upstream-docker-pods/tests/test_ckan_publish.py | Collection blocked by missing sqlalchemy in tests/conftest.py | ~100 |
+| 00:03 | Corrected CKAN measurement resource endpoint | upstream-docker-pods/app/services/ckan_publish.py; upstream-docker-pods/tests/test_ckan_publish.py | GeoJSON resource URLs now use the current `/measurements.geojson` API route; focused tests pass without unavailable conftest dependencies | ~250 |

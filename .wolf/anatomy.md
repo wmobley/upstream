@@ -1,7 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-10T15:03:04.303Z
-> Files: 786 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T23:02:50.630Z
+> Files: 801 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../../../../private/tmp/claude-502/-Users-wmobley-Documents-Github-upstream/a157d874-925e-4216-8ec0-5fec1ef0b0a6/scratchpad/
+
+- `probe.js` — Declares TOKEN (~569 tok)
 
 ## ../../../../Users/wmobley/.claude/
 
@@ -53,19 +57,6 @@
 - `curl.out` (~3900 tok)
 - `dev-upstream.sh` (~1063 tok)
 - `README.md` — Project documentation, now includes a Documentation section pointing at docs/ (~950 tok)
-
-Removed 2026-08-10: `CKAN_2X_AUTH_REGRESSION_ISSUE.md` (bug fixed and confirmed live — deleted),
-`SECURITY_TAPIS_PODS_PLAN.md` (filed as https://github.com/wmobley/upstream-ui-pods/issues/20,
-added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
-`TAPIS_AUTH_TESTING.md`/`FRONTEND_AUTH_CHANGES.md` (consolidated into `docs/auth/tapis-pods-auth.md`),
-`WEBODM_INTEGRATION.md` (moved to `docs/integrations/webodm.md`),
-`recreate_fluxapi_from_upstreamapi.py`/`rotate_upstream_postgres_passwords.py` (moved to
-`tapis-postgres-backup/ops/` — they already imported that project's config/pods/backup modules).
-`.DS_Store` also removed (junk, not gitignored here — see `.gitignore` update below).
-
-## docs/integrations/
-
-- `webodm.md` — Upstream × WebODM integration guide. Moved from root `WEBODM_INTEGRATION.md`. (~4272 tok)
 
 ## .claude/
 
@@ -834,8 +825,15 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 
 ## bethel1Base/
 
+- `.env.example` — Example actor and local-run environment variables, including watermark fetch defaults (~220 tok)
 - `.gitignore` — Git ignore rules (~1022 tok)
+- `Dockerfile` — Builds the Bethel Tailscale/SSH fetch, transform, and upload container (~330 tok)
+- `entrypoint.sh` — Container orchestration for Tailscale login, fetch, manifest-driven transform, and upload (~1460 tok)
+- `fetch_tilt_telemetry.py` — Remote logger file listing/download with local, date, latest, and API-watermark selection modes (~2900 tok)
 - `README.md` — Project documentation (~1843 tok)
+- `transform_tilt_telemetry.py` — Converts raw tilt telemetry CSVs into per-unit Upstream sensors and measurements CSVs (~1850 tok)
+- `upload_to_upstream.py` — Uploads transformed per-unit CSVs to Upstream with candidate-window timestamp dedupe (~2250 tok)
+- `upstream_watermark.py` — Shared Upstream watermark, timestamp normalization, anchor-sensor, and candidate bounds helpers (~1350 tok)
 
 ## bethel1Base/.wolf/
 
@@ -848,9 +846,19 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 
 - `register_tapis_actor.py` — Create or update the `bethel1base-nightly` Tapis actor. (~2060 tok)
 
+## bethel1Base/tests/
+
+- `test_entrypoint.py` — Subprocess tests for manifest-driven transform and no-download upload skipping with fake Tailscale/app scripts (~1220 tok)
+- `test_fetch_tilt_telemetry.py` — Unit tests for watermark cutoff, file selection, local missing mode, and pull manifest metadata (~980 tok)
+- `test_upstream_watermark.py` — Unit tests for anchor-sensor watermarks, earliest station watermark, pagination, and CSV time bounds (~1000 tok)
+
 ## docs/auth/
 
 - `tapis-pods-auth.md` — Tapis Pods Authentication (~2749 tok)
+
+## docs/integrations/
+
+- `webodm.md` — Upstream × WebODM integration guide. Moved from root `WEBODM_INTEGRATION.md`. (~4272 tok)
 
 ## tapis-postgres-backup/
 
@@ -1010,6 +1018,20 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 - `cerebrum.md` — Cerebrum (~626 tok)
 - `memory.md` — Memory (~452 tok)
 
+## upstream-ui/docs/docs/concepts/
+
+- `projects-and-api-urls.md` — Projects and API URLs (~795 tok)
+
+## upstream-ui/docs/docs/web-ui-guide/campaigns/
+
+- `creating.md` — Creating Campaigns (~363 tok)
+
+## upstream-ui/docs/docs/web-ui-guide/stations/
+
+- `creating.md` — Creating Stations (~438 tok)
+- `dashboard.md` — Station Dashboard (~444 tok)
+- `exporting-data.md` — Exporting Data from a Station (~411 tok)
+
 ## upstream-ui/public/
 
 - `robots.txt` (~7 tok)
@@ -1028,7 +1050,8 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 
 ## upstream-ui/src/app/LineConfidenceChart/
 
-- `LineConfidenceChart.tsx` — LineConfidenceChart (~1791 tok)
+- `LineConfidenceChart.tsx` — LineConfidenceChart (~1992 tok)
+- `UPlotChart.tsx` — defaultColors (~5351 tok)
 
 ## upstream-ui/src/app/LineConfidenceChart/components/
 
@@ -1036,17 +1059,26 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 - `MainChart.tsx` — Finds the raw measurement whose timestamp is closest to the target time. (~5457 tok)
 - `MeasurementNoteCallout.tsx` — MeasurementNoteCallout (~1306 tok)
 
+## upstream-ui/src/app/LineConfidenceChart/utils/
+
+- `uPlotDataTransform.ts` — X-axis timestamps (ms since epoch) (~3033 tok)
+
 ## upstream-ui/src/app/Sensor/viz/
 
 - `HeatMapViz.tsx` — HeatMapViz (~1523 tok)
 
 ## upstream-ui/src/app/Sensor/viz/LineConfidenceViz/
 
-- `LineConfidenceViz.tsx` — LineConfidenceViz (~887 tok)
+- `LineConfidenceViz.tsx` — LineConfidenceViz (~931 tok)
 
 ## upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/
 
-- `Chart.tsx` — Chart (~1299 tok)
+- `Chart.tsx` — Chart (~1414 tok)
+- `SensorFilteringModal.tsx` — getSensorKey — renders modal (~1842 tok)
+
+## upstream-ui/src/app/Sensor/viz/LineConfidenceViz/context/
+
+- `LineConfidenceContextState.ts` — Interval sent to the API (e.g., 'second'). (~1365 tok)
 
 ## upstream-ui/src/app/SensorDashboard/
 
@@ -1090,6 +1122,11 @@ added to project 5 — deleted), `TAPIS_AUTH.md`/`TAPIS_AUTH_QUICKSTART.md`/
 ## upstream-ui/src/hooks/api/
 
 - `useConfiguration.ts` — Declares useConfiguration (~920 tok)
+
+## upstream-ui/src/hooks/measurements/
+
+- `useList.ts` — Exports useList (~613 tok)
+- `useListConfidenceValues.ts` — Exports useListConfidenceValues (~683 tok)
 
 ## upstream-ui/src/hooks/notes/
 
