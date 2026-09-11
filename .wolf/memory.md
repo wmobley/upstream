@@ -870,3 +870,4 @@
 | 00:01 | Validated CKAN publish UI fix | upstream-ui | Production build and diff checks passed; no frontend test script is configured | ~150 |
 | 00:02 | Ran focused CKAN URL test | upstream-docker-pods/tests/test_ckan_publish.py | Collection blocked by missing sqlalchemy in tests/conftest.py | ~100 |
 | 00:03 | Corrected CKAN measurement resource endpoint | upstream-docker-pods/app/services/ckan_publish.py; upstream-docker-pods/tests/test_ckan_publish.py | GeoJSON resource URLs now use the current `/measurements.geojson` API route; focused tests pass without unavailable conftest dependencies | ~250 |
+| 00:04 | Committed and pushed CKAN URL, UI publish, and parent project changes | upstream-docker-pods@951a72c; upstream-ui@3b4fb6c; upstream@3197bf1 | Remote branches match local commits; runtime artifacts and standalone embedded repos remain uncommitted | ~150 |
