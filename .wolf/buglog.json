@@ -2,6 +2,30 @@
   "version": 1,
   "bugs": [
     {
+      "id": "bug-099",
+      "timestamp": "2026-09-11T00:00:00Z",
+      "error_message": "User tybierwagen has user access to vitalapi but cannot see the project because they are not on the PT2050 allocation.",
+      "file": "upstream-ui/src/contexts/InstanceContext.tsx",
+      "root_cause": "Project discovery and base-instance allocation checks are coupled conceptually; the selector must distinguish per-project application role from the special allocation-based admission rule for the base upstream instance.",
+      "fix": "Investigated; recommended to make allocation an independent base-instance check and use the target project's user role for vitalapi visibility.",
+      "tags": ["authorization", "project-discovery", "allocation", "vitalapi"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": "bug-100",
+      "timestamp": "2026-09-11T00:00:00Z",
+      "error_message": "Focused auth tests could not start: ModuleNotFoundError: No module named 'sqlalchemy'.",
+      "file": "upstream-docker-pods/tests/conftest.py",
+      "root_cause": "The current Python test environment is missing the SQLAlchemy dependency.",
+      "fix": "Not fixed; test execution is blocked by the local environment.",
+      "tags": ["tests", "environment", "sqlalchemy"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T00:00:00Z"
+    },
+    {
       "id": "bug-001",
       "timestamp": "2026-07-16T18:19:37.739Z",
       "error_message": "Null/undefined access in ",
@@ -55,7 +79,7 @@
       "error_message": "Wrong reference: ListNotesResponse should be NoteUpdate",
       "file": "upstream-docker-pods/app/services/note_service.py",
       "root_cause": "Used \"ListNotesResponse\" instead of \"NoteUpdate\"",
-      "fix": "Changed ListNotesResponse → NoteUpdate",
+      "fix": "Changed ListNotesResponse \u2192 NoteUpdate",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -71,7 +95,7 @@
       "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
       "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_notes.py",
       "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
-      "fix": "Changed ListNotesResponse → NoteItem",
+      "fix": "Changed ListNotesResponse \u2192 NoteItem",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -87,7 +111,7 @@
       "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
       "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_station_notes.py",
       "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
-      "fix": "Changed ListNotesResponse → NoteItem",
+      "fix": "Changed ListNotesResponse \u2192 NoteItem",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -103,7 +127,7 @@
       "error_message": "Wrong reference: ListNotesResponse should be NoteItem",
       "file": "upstream-docker-pods/app/api/v1/routes/campaigns/campaign_station_sensor_measurement_notes.py",
       "root_cause": "Used \"ListNotesResponse\" instead of \"NoteItem\"",
-      "fix": "Changed ListNotesResponse → NoteItem",
+      "fix": "Changed ListNotesResponse \u2192 NoteItem",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -135,7 +159,7 @@
       "error_message": "Wrong reference: false should be true",
       "file": "upstream-ui/src/app/common/Notes/NotesList.tsx",
       "root_cause": "Used \"false\" instead of \"true\"",
-      "fix": "Changed false → true",
+      "fix": "Changed false \u2192 true",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -151,7 +175,7 @@
       "error_message": "Wrong reference: false should be true",
       "file": "upstream-ui/src/app/SensorDashboard/_components/MeasurementNotePanel.tsx",
       "root_cause": "Used \"false\" instead of \"true\"",
-      "fix": "Changed false → true",
+      "fix": "Changed false \u2192 true",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -263,7 +287,7 @@
       "error_message": "Wrong reference: HeatMapProps should be onSelectMeasurement",
       "file": "upstream-ui/src/app/HeatMap/HeatMap.tsx",
       "root_cause": "Used \"HeatMapProps\" instead of \"onSelectMeasurement\"",
-      "fix": "Changed HeatMapProps → onSelectMeasurement",
+      "fix": "Changed HeatMapProps \u2192 onSelectMeasurement",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -326,7 +350,7 @@
       "timestamp": "2026-07-17T19:50:51.030Z",
       "error_message": "Missing error handling in function",
       "file": "upstream-ui/src/contexts/InstanceContext.tsx",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "root_cause": "Code path had no error handling \u2014 exceptions would propagate uncaught",
       "fix": "Added try/catch block",
       "tags": [
         "auto-detected",
@@ -358,8 +382,8 @@
       "timestamp": "2026-07-17T19:51:12.941Z",
       "error_message": "CSS fix: PERMISSION_ORDER",
       "file": "upstream-ui/src/app/_Layout/_components/Header/_components/ProjectDropdown.tsx",
-      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
-      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] \u2192 Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] \u2192 Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
       "tags": [
         "auto-detected",
         "style-fix",
@@ -374,7 +398,7 @@
       "timestamp": "2026-07-17T19:54:02.112Z",
       "error_message": "Missing await",
       "file": "upstream-docker-pods/tests/api/dependencies/test_auth.py",
-      "root_cause": "Async call without await — returned Promise instead of value",
+      "root_cause": "Async call without await \u2014 returned Promise instead of value",
       "fix": "Added await to async call",
       "tags": [
         "auto-detected",
@@ -391,7 +415,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/tests/api/v1/routes/test_user_roles.py",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 5→8 lines (3 removed)",
+      "fix": "Rewrote 5\u21928 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -423,7 +447,7 @@
       "error_message": "Wrong operator: ?? should be ===",
       "file": "upstream-ui/src/contexts/InstanceContext.tsx",
       "root_cause": "Used \"??\" instead of \"===\"",
-      "fix": "Changed operator ?? → ===",
+      "fix": "Changed operator ?? \u2192 ===",
       "tags": [
         "auto-detected",
         "operator-fix",
@@ -438,8 +462,8 @@
       "timestamp": "2026-07-17T20:27:44.080Z",
       "error_message": "CSS fix: tapisToken",
       "file": "upstream-ui/src/contexts/InstanceContext.tsx",
-      "root_cause": "tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { → string): Promise<ProjectInstance[]> {",
-      "fix": "Changed tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { → string): Promise<ProjectInstance[]> {",
+      "root_cause": "tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { \u2192 string): Promise<ProjectInstance[]> {",
+      "fix": "Changed tapisToken: string, currentUsername?: string): Promise<ProjectInstance[]> { \u2192 string): Promise<ProjectInstance[]> {",
       "tags": [
         "auto-detected",
         "style-fix",
@@ -471,7 +495,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-ui/src/contexts/InstanceContext.tsx",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 4→3 lines (2 removed)",
+      "fix": "Rewrote 4\u21923 lines (2 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -486,8 +510,8 @@
       "timestamp": "2026-07-17T20:28:13.467Z",
       "error_message": "CSS fix: PERMISSION_ORDER",
       "file": "upstream-ui/src/app/_Layout/_components/Header/_components/ProjectDropdown.tsx",
-      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
-      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] → Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "root_cause": "PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] \u2192 Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
+      "fix": "Changed PERMISSION_ORDER: Permission[] = ['ADMIN', 'USER', 'READ'] \u2192 Permission[] = ['ADMIN', 'USER', 'READ', 'UNKNOWN']",
       "tags": [
         "auto-detected",
         "style-fix",
@@ -519,7 +543,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/docs/design/2026-07-09-unified-ui-tapis-auth-multi-instance.md",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 6→6 lines (2 removed)",
+      "fix": "Rewrote 6\u21926 lines (2 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -534,8 +558,8 @@
       "timestamp": "2026-07-20T15:55:03.708Z",
       "error_message": "CSS fix: hover",
       "file": "upstream-ui/src/app/common/PublishButton/PublishButton.tsx",
-      "root_cause": "hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] → bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
-      "fix": "Changed hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] → bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
+      "root_cause": "hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] \u2192 bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
+      "fix": "Changed hover: bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size] \u2192 bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${iconSizeClasses[size]",
       "tags": [
         "auto-detected",
         "style-fix",
@@ -583,7 +607,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 7→5 lines (2 removed) | Also: selectedMeasurementId: number | null;; onSelectMeasurementForNote: (id: number) => void; | Also: interface LineConfidenceContentProps {; campaignId: string;",
+      "fix": "Rewrote 7\u21925 lines (2 removed) | Also: selectedMeasurementId: number | null;; onSelectMeasurementForNote: (id: number) => void; | Also: interface LineConfidenceContentProps {; campaignId: string;",
       "tags": [
         "auto-detected",
         "refactor",
@@ -598,7 +622,7 @@
       "timestamp": "2026-07-21T20:53:31.123Z",
       "error_message": "Incorrect value in code",
       "file": "upstream-docker-pods/.wolf/buglog.json",
-      "root_cause": "Had \"Not yet applied — investigated and a plan was pre",
+      "root_cause": "Had \"Not yet applied \u2014 investigated and a plan was pre",
       "fix": "Changed to \"Reverted the cors_allow_origins/methods/headers/c",
       "tags": [
         "auto-detected",
@@ -615,7 +639,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/app/services/pods_service.py",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 17→43 lines (3 removed)",
+      "fix": "Rewrote 17\u219243 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -631,7 +655,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/app/services/pods_service.py",
       "root_cause": "19 lines replaced/restructured",
-      "fix": "Rewrote 26→10 lines (19 removed) | Also: # CORS is configured via a follow-up PUT (see _boo; # create payload above: Tapis Pods gates any write | Also: def _fetch_service_token(self) -> str:; username = self.settings.TAPIS_SERVICE_USERNAME or",
+      "fix": "Rewrote 26\u219210 lines (19 removed) | Also: # CORS is configured via a follow-up PUT (see _boo; # create payload above: Tapis Pods gates any write | Also: def _fetch_service_token(self) -> str:; username = self.settings.TAPIS_SERVICE_USERNAME or",
       "tags": [
         "auto-detected",
         "refactor",
@@ -647,7 +671,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/app/api/v1/routes/pods.py",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 7→6 lines (2 removed)",
+      "fix": "Rewrote 7\u21926 lines (2 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -679,7 +703,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/.wolf/buglog.json",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 5→5 lines (3 removed)",
+      "fix": "Rewrote 5\u21925 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -695,7 +719,7 @@
       "error_message": "Wrong reference: try should be role",
       "file": "upstream-docker-pods/app/api/v1/routes/root.py",
       "root_cause": "Used \"try\" instead of \"role\"",
-      "fix": "Changed try → role",
+      "fix": "Changed try \u2192 role",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -711,7 +735,7 @@
       "error_message": "Significant refactor of ",
       "file": "../../../../private/tmp/claude-503/-Volumes-Macintosh-HD---Data-Github-upstream/4542e859-8e98-4a2b-aa94-4a19498f324a/scratchpad/tas-main/app/api/v1/routes/root.py",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 12→9 lines (4 removed)",
+      "fix": "Rewrote 12\u21929 lines (4 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -742,7 +766,7 @@
       "timestamp": "2026-07-22T19:53:55.713Z",
       "error_message": "Missing error handling in unknown",
       "file": "upstream-ui/src/app/Admin/index.tsx",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "root_cause": "Code path had no error handling \u2014 exceptions would propagate uncaught",
       "fix": "Added try/catch block",
       "tags": [
         "auto-detected",
@@ -791,7 +815,7 @@
       "error_message": "Wrong reference: Draft should be In",
       "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
       "root_cause": "Used \"Draft\" instead of \"In\"",
-      "fix": "Changed Draft → In",
+      "fix": "Changed Draft \u2192 In",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -807,7 +831,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
       "root_cause": "8 lines replaced/restructured",
-      "fix": "Rewrote 19→23 lines (8 removed) | Also: - `NoteCreate`/`NoteUpdate` gain an optional `loca; - `NoteItem` gains an optional `location: Point |  | Also: 1. **Clear semantics on update:** should `PATCH` o; 2. **Marker visual design:** exact color/icon choi",
+      "fix": "Rewrote 19\u219223 lines (8 removed) | Also: - `NoteCreate`/`NoteUpdate` gain an optional `loca; - `NoteItem` gains an optional `location: Point |  | Also: 1. **Clear semantics on update:** should `PATCH` o; 2. **Marker visual design:** exact color/icon choi",
       "tags": [
         "auto-detected",
         "refactor",
@@ -823,7 +847,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/app/services/note_service.py",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 10→22 lines (2 removed)",
+      "fix": "Rewrote 10\u219222 lines (2 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -855,7 +879,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-ui/src/app/LineConfidenceChart/components/MeasurementNoteCallout.tsx",
       "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 24→35 lines (4 removed)",
+      "fix": "Rewrote 24\u219235 lines (4 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -871,7 +895,7 @@
       "error_message": "Wrong reference: Approved should be Implemented",
       "file": "upstream-docker-pods/docs/design/2026-07-23-measurement-note-location.md",
       "root_cause": "Used \"Approved\" instead of \"Implemented\"",
-      "fix": "Changed Approved → Implemented",
+      "fix": "Changed Approved \u2192 Implemented",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -886,8 +910,8 @@
       "timestamp": "2026-07-23T17:59:56.307Z",
       "error_message": "CSS fix: data",
       "file": "upstream-ui/src/app/Campaign/_components/CampaignDashboard/CampaignDashboard.tsx",
-      "root_cause": "data: notesData, isLoading: notesLoading → noteLocationsData",
-      "fix": "Changed data: notesData, isLoading: notesLoading → noteLocationsData",
+      "root_cause": "data: notesData, isLoading: notesLoading \u2192 noteLocationsData",
+      "fix": "Changed data: notesData, isLoading: notesLoading \u2192 noteLocationsData",
       "tags": [
         "auto-detected",
         "style-fix",
@@ -919,7 +943,7 @@
       "error_message": "CSV measurement upload fails in UI with generic 'Error: Response returned an error code'",
       "file": "upstream-ui/docker-entrypoint.sh",
       "root_cause": "nginx.conf includes /etc/nginx/conf.d/api-proxy.inc* as a glob (silently matches nothing if absent). docker-entrypoint.sh only writes api-proxy.inc when UPSTREAM_API_PROXY_URL is set. When that env var is missing on the deployed pod, /api/v1/* requests fall through to the catch-all `location /` (try_files $uri $uri/ /index.html) and nginx returns the SPA shell (200 OK, index.html) instead of proxying to the backend. Confirmed in nginx access logs: every /api/v1/* and SPA route request returned exactly '200 502' (502 bytes = index.html size), while /tapis-proxy/v3/pods (always generated, unconditional) returned real proxied payloads. The generated OpenAPI TS client then fails to parse the HTML body as JSON and surfaces a generic error.",
-      "fix": "Not yet fixed — need to verify/set UPSTREAM_API_PROXY_URL on the upstream-ui pod deployment so docker-entrypoint.sh generates api-proxy.inc. No code change identified as required unless the env var is confirmed absent/wrong.",
+      "fix": "Not yet fixed \u2014 need to verify/set UPSTREAM_API_PROXY_URL on the upstream-ui pod deployment so docker-entrypoint.sh generates api-proxy.inc. No code change identified as required unless the env var is confirmed absent/wrong.",
       "tags": [
         "nginx",
         "proxy",
@@ -938,7 +962,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-ui/src/hooks/api/useConfiguration.ts",
       "root_cause": "6 lines replaced/restructured",
-      "fix": "Rewrote 19→24 lines (6 removed)",
+      "fix": "Rewrote 19\u219224 lines (6 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -986,7 +1010,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
       "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 15→16 lines (2 removed) | Also: **How to schedule:**; 1. In `AuthContext.tsx`, after `storeTapisTokens() | Also: // Update tokens with new values; : refreshTokenObj.access_token; | Also: 1. **Feature flag (optional):** Add an env var `VI; - Build upstream-ui with changes. | Also: 4. **Concurrent refresh race:** Multiple API reque; 5. **Session durability vs. security:** Silent ref | Also: **Investigated and rejected because:**; - Tapis OAuth2 client registration payload only in | Also: 2. **Fallback: On-demand refresh on 401** (if impl; 3. **Failure: Refresh token revoked**",
+      "fix": "Rewrote 15\u219216 lines (2 removed) | Also: **How to schedule:**; 1. In `AuthContext.tsx`, after `storeTapisTokens() | Also: // Update tokens with new values; : refreshTokenObj.access_token; | Also: 1. **Feature flag (optional):** Add an env var `VI; - Build upstream-ui with changes. | Also: 4. **Concurrent refresh race:** Multiple API reque; 5. **Session durability vs. security:** Silent ref | Also: **Investigated and rejected because:**; - Tapis OAuth2 client registration payload only in | Also: 2. **Fallback: On-demand refresh on 401** (if impl; 3. **Failure: Refresh token revoked**",
       "tags": [
         "auto-detected",
         "refactor",
@@ -1018,7 +1042,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
       "root_cause": "7 lines replaced/restructured",
-      "fix": "Rewrote 45→62 lines (7 removed) | Also: 1. **Tapis refresh response shape:** What is the e; - Is the response wrapped in `{ result: {...} }` o",
+      "fix": "Rewrote 45\u219262 lines (7 removed) | Also: 1. **Tapis refresh response shape:** What is the e; - Is the response wrapped in `{ result: {...} }` o",
       "tags": [
         "auto-detected",
         "refactor",
@@ -1082,7 +1106,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/app/api/v1/routes/root.py",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 7→3 lines (3 removed)",
+      "fix": "Rewrote 7\u21923 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -1098,7 +1122,7 @@
       "error_message": "Significant refactor of ",
       "file": "upstream-docker-pods/docs/design/2026-08-04-tapis-silent-token-refresh.md",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 4→15 lines (3 removed)",
+      "fix": "Rewrote 4\u219215 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -1194,7 +1218,7 @@
       "error_message": "Significant refactor of ",
       "file": "bethel1Base/ops/register_tapis_actor.py",
       "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 28→41 lines (3 removed)",
+      "fix": "Rewrote 28\u219241 lines (3 removed)",
       "tags": [
         "auto-detected",
         "refactor",
@@ -1210,7 +1234,7 @@
       "error_message": "Wrong reference: CRON_SCHEDULE should be cron_schedule",
       "file": "bethel1Base/ops/register_tapis_actor.py",
       "root_cause": "Used \"CRON_SCHEDULE\" instead of \"cron_schedule\"",
-      "fix": "Changed CRON_SCHEDULE → cron_schedule",
+      "fix": "Changed CRON_SCHEDULE \u2192 cron_schedule",
       "tags": [
         "auto-detected",
         "wrong-reference",
@@ -1361,6 +1385,734 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-13T18:12:25Z"
+    },
+    {
+      "id": "bug-085",
+      "timestamp": "2026-08-20T16:00:29Z",
+      "error_message": "bethel1Base entrypoint tests failed with `bad substitution` on `${TRANSFORM_AFTER_FETCH,,}` under macOS /bin/bash, and the first harness used `python` where only sys.executable/python3 was reliable.",
+      "file": "bethel1Base/entrypoint.sh",
+      "root_cause": "The entrypoint used Bash 4 lowercase parameter expansion, but local tests invoke macOS Bash 3. The new test harness also relied on `python` being present on PATH.",
+      "fix": "Replaced `${VAR,,}` checks with a portable lowercase helper using `tr`, and updated the entrypoint tests to set `PYTHON_BIN` to `sys.executable`.",
+      "tags": [
+        "bethel1Base",
+        "entrypoint",
+        "bash",
+        "pytest",
+        "portability"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-20T16:00:29Z"
+    },
+    {
+      "id": "bug-086",
+      "timestamp": "2026-08-20T19:39:00Z",
+      "error_message": "RuntimeError: {\"message\": \"Not authorized -- you do not have access to this actor.\", \"status\": \"error\"} while deleting Tapis actor zyoq4PDywXqbN",
+      "file": "bethel1Base/ops/register_tapis_actor.py",
+      "root_cause": "The hardcoded actor id from the broad rebuild script was stale or owned by another account. The available deployment credentials authenticate as tasclient_dsso and could only see the active Bethel actor zXPqA0LbGJqvk.",
+      "fix": "Listed visible actors with the deployment account, replaced the visible old Bethel actor zXPqA0LbGJqvk, and updated the Bethel registration script to support Bethel-only replacement with redacted output.",
+      "tags": [
+        "bethel1Base",
+        "tapis",
+        "actor",
+        "deployment",
+        "authorization"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-20T19:39:00Z"
+    },
+    {
+      "id": "bug-087",
+      "timestamp": "2026-08-20T20:02:00Z",
+      "error_message": "Secret-fed Tapis check first failed with `missing token on stdin`, then `stty: stdin isn't a terminal` before succeeding with a PTY no-echo read.",
+      "file": "interactive Tapis actor check command",
+      "root_cause": "Non-interactive exec closed stdin before token input, and `stty -echo` requires a PTY.",
+      "fix": "Started the command with `tty=true`, disabled terminal echo, read one token line, and kept the token out of command output; the guarded GET still returned not authorized for actor zyoq4PDywXqbN.",
+      "tags": [
+        "tapis",
+        "token",
+        "terminal",
+        "deployment"
+      ],
+      "related_bugs": [
+        "bug-086"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-20T20:02:00Z"
+    },
+    {
+      "id": "bug-088",
+      "timestamp": "2026-08-20T19:50:21Z",
+      "error_message": "Tapis actor execution RmAYGeKPvEB3o failed immediately with `exec /usr/bin/tini: exec format error` and exit code 255.",
+      "file": "bethel1Base/Dockerfile",
+      "root_cause": "The first published actor image was built locally on Docker Desktop without an explicit platform, producing an image incompatible with the linux/amd64 Tapis worker.",
+      "fix": "Rebuilt and pushed `ghcr.io/wmobley/bethel1base:watermark-20260820-2005-amd64` using `docker buildx build --platform linux/amd64 --push`, updated `register_tapis_actor.py` to default to that tag, recreated the actor under wmobley ownership, and reran successfully.",
+      "tags": [
+        "bethel1Base",
+        "docker",
+        "amd64",
+        "tapis",
+        "deployment"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-20T19:50:21Z"
+    },
+    {
+      "id": "bug-089",
+      "timestamp": "2026-09-03T13:55:00-05:00",
+      "error_message": "The AGENTS.md DSO Architecture paths for `docs/Codex-context/how-to-use.md` and `docs/Codex-context/repo-map.md` were not found at the `/Volumes/Macintosh HD - Data/Github/DSO-Architecture/` path.",
+      "file": "AGENTS.md / DSO Architecture docs references",
+      "root_cause": "The local documentation checkout available in this environment uses the symlink path `/Users/wmobley/Documents/Github/DSO-Architecture/` and the context pages are named `docs/claude-context/...`, not `docs/Codex-context/...`.",
+      "fix": "Used `/Users/wmobley/Documents/Github/DSO-Architecture/docs/claude-context/how-to-use.md` and `repo-map.md` as the equivalent references for this task; no docs source update was made.",
+      "tags": [
+        "docs",
+        "dso-architecture",
+        "path-drift",
+        "openwolf"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T13:55:00-05:00"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-09-04T00:00:00-05:00",
+      "error_message": "Sensor route map only showing small amount of data - limit=500 and downsampleThreshold=500 severely restricted data displayed",
+      "file": "upstream-ui/src/app/SensorDashboard/_components/StatsSection.tsx",
+      "root_cause": "StatsSection (Sensor Route map) was calling useList with limit=500 and downsampleThreshold=500, while the dedicated RouteMapViz uses limit=500000 and downsampleThreshold=5000. The low limit meant only 500 measurements were fetched from the database, and the low downsample threshold further reduced the displayed data.",
+      "fix": "Increased limit from 500 to 500000 and downsampleThreshold from 500 to 5000 to match the values used by RouteMapViz, allowing the Sensor Route map to display the full dataset.",
+      "tags": [
+        "data-volume",
+        "limit",
+        "downsample",
+        "sensor-route",
+        "stats-section"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-04T00:00:00-05:00"
+    },
+    {
+      "id": "bug-090",
+      "timestamp": "2026-09-04T16:30:00-05:00",
+      "error_message": "Docker build fails: mkdocs build succeeds but `cd site` fails with exit code 2 \u2014 `/bin/sh: 1: cd: can't cd to site`",
+      "file": "upstream-ui/Dockerfile",
+      "root_cause": "MkDocs resolves --site-dir relative to the config file directory (mkdocs-source/), not the working directory (/docs). So 'site' puts output at /docs/mkdocs-source/site, but then 'cd site' looks for /docs/site which doesn't exist.",
+      "fix": "Changed --site-dir from relative 'site' to absolute '/docs/site' and updated the subsequent cd to match.",
+      "tags": [
+        "docker",
+        "mkdocs",
+        "path-resolution",
+        "docs",
+        "build-failure"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-04T16:30:00-05:00"
+    },
+    {
+      "id": "bug-092",
+      "timestamp": "2026-09-05T16:03:33.572Z",
+      "error_message": "Wrong operator: ?? should be !==",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Used \"??\" instead of \"!==\"",
+      "fix": "Changed operator ?? \u2192 !==",
+      "tags": [
+        "auto-detected",
+        "operator-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T16:03:33.572Z"
+    },
+    {
+      "id": "bug-093",
+      "timestamp": "2026-09-05T16:03:56.693742Z",
+      "error_message": "Uncaught TypeError: s.points.show is not a function (at uplot.js drawSeries)",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "uPlot wraps series.points.show into a callable via fnOrSelf when the series is created. A later effect ([renderDataPoints, pointRadius]) reassigned s.points.show = renderDataPoints && (s.points.show ?? false); when renderDataPoints was false, the && short-circuited to the literal boolean false, overwriting the function. The next redraw called s.points.show(...) and crashed since it was no longer callable.",
+      "fix": "Compute the desired show boolean separately (shouldShowPoints = renderDataPoints && s.show !== false) and always assign a function: s.points.show = () => shouldShowPoints.",
+      "tags": [
+        "uplot",
+        "points.show",
+        "tsx",
+        "runtime-error"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T16:03:56.693742Z"
+    },
+    {
+      "id": "bug-094",
+      "timestamp": "2026-09-05T21:17:59.462308Z",
+      "error_message": "Line Confidence chart shows \"No data available\" after navigating between sensors, even though the sensor has measurements (verified via direct API call)",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/LineConfidenceViz.tsx",
+      "root_cause": "LineConfidenceProvider was rendered without a key, so React Router reuses the same component instance when navigating from one sensor to another instead of unmounting/remounting it. All useState in LineConfidenceContext.tsx (selectedTimeRange, minFilterValueInput, maxFilterValueInput, additionalSensorInfos/Data) survives the navigation; the existing reset effect only cleared aggregationInterval/aggregationValue/hasUserSelectedAggregation. A stale time-range or value filter from the previously viewed sensor gets applied to the new sensor, filtering every aggregation bucket down to zero and eventually landing on the No data available state after the interval auto-widen effect exhausts second->minute->hour->day->week->month.",
+      "fix": "Added key={campaignId-stationId-sensorId} to LineConfidenceProvider in LineConfidenceViz.tsx so switching sensors forces a full remount, resetting all context state instead of relying on an incomplete manual reset effect.",
+      "tags": [
+        "react",
+        "state-leak",
+        "stale-state",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-093"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T21:17:59.462308Z"
+    },
+    {
+      "id": "bug-095",
+      "timestamp": "2026-09-05T21:47:03.225Z",
+      "error_message": "Missing guard clause",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "No early return/throw for edge case: isProgrammaticScaleUpdate.current",
+      "fix": "Added guard clause: if (isProgrammaticScaleUpdate.current)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T21:47:03.225Z"
+    },
+    {
+      "id": "bug-096",
+      "timestamp": "2026-09-05T21:50:34.162693Z",
+      "error_message": "Line Confidence chart continuously flashes loading/chart and never settles or displays data",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "The uPlot setScale hook unconditionally called onViewDomainChange (LineConfidenceChart setViewDomain) and onBrush (Chart.tsx setSelectedTimeRange) on every scale change, including ones triggered programmatically by our own mount/update effects (u.setScale for x/y). Setting selectedTimeRange re-queries useListConfidenceValues with new start/end dates, producing new aggregatedData/minValue/maxValue, which re-runs the update-data effect and calls u.setScale again, refiring the hook and looping indefinitely (setSelectedTimeRange -> refetch -> setScale -> setSelectedTimeRange...). uPlot also defers its internal commit() (which fires the setScale hook) to a microtask, so a naive ref flag set/reset synchronously around the setScale calls did not actually bracket the hook firing.",
+      "fix": "Added an isProgrammaticScaleUpdate ref that the setScale hook checks and bails out on. Wrapped the effects own setData/setScale calls in u.batch(), which uPlot documents as committing synchronously (skipping the microtask queue) specifically so the ref flag correctly brackets the hook firing.",
+      "tags": [
+        "uplot",
+        "infinite-loop",
+        "react-effect",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-093",
+        "bug-094"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T21:50:34.162693Z"
+    },
+    {
+      "id": "bug-097",
+      "timestamp": "2026-09-05T21:59:53.957Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T21:59:53.957Z"
+    },
+    {
+      "id": "bug-098",
+      "timestamp": "2026-09-05T22:01:11.439Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5\u21923 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:01:11.439Z"
+    },
+    {
+      "id": "bug-099",
+      "timestamp": "2026-09-05T22:01:25.787Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:01:25.787Z"
+    },
+    {
+      "id": "bug-100",
+      "timestamp": "2026-09-05T22:01:53.616Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/hooks/measurements/useList.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:01:53.616Z"
+    },
+    {
+      "id": "bug-101",
+      "timestamp": "2026-09-05T22:03:43.906047Z",
+      "error_message": "Line Confidence chart never settles: repeated GET .../measurements/confidence-intervals requests with end_date walking backward by exactly 1 hour each time, chart never displays",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx; upstream-ui/src/hooks/measurements/useListConfidenceValues.ts; upstream-ui/src/hooks/measurements/useList.ts; upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx",
+      "root_cause": "Reproduced headlessly with Playwright (console + network capture) and confirmed via added mount/unmount logging that UPlotChart was genuinely unmounting and remounting every cycle (not just re-rendering) with dataArray shrinking each time. Chart.tsx gates the entire chart subtree on `{aggregatedData && (...)}`; TanStack Query v5 resets `data` to undefined while a query with a changed queryKey is in flight (no placeholderData configured), so every time selectedTimeRange changed, aggregatedData went null and unmounted UPlotChart. Each fresh uPlot instance performs its own internal initial auto-range from the data on construction, firing the setScale hook before isProgrammaticScaleUpdate (the bug-096 fix) is even relevant, since it is a brand-new ref on a brand-new instance. That phantom auto-range was treated as a user brush, calling onBrush -> setSelectedTimeRange with a slightly narrower window, triggering another refetch, another unmount/remount, converging by roughly one hour narrower each cycle, forever.",
+      "fix": "1) In UPlotChart.tsx setScale hook, added `if (u.cursor.event == null) return;` alongside the existing isProgrammaticScaleUpdate guard \u2014 cursor.event is only ever set by a real DOM mouse event, so this ignores uPlot-internal auto-ranging (construction-time or data-driven) and only treats genuine drag/zoom interactions as a user brush. 2) Added `placeholderData: keepPreviousData` (TanStack Query v5) to useListConfidenceValues.ts and useList.ts so data stays populated during a start/end-date refetch instead of resetting to undefined, preventing the Chart.tsx `{aggregatedData && ...}` gate from unmounting UPlotChart on every refetch in the first place. Verified fixed via headless Playwright reproduction: request count dropped from an unbounded loop to exactly 2 (one per data source), and the chart rendered real data.",
+      "tags": [
+        "uplot",
+        "react-query",
+        "infinite-loop",
+        "unmount-remount",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-093",
+        "bug-094",
+        "bug-096"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:03:43.906047Z"
+    },
+    {
+      "id": "bug-102",
+      "timestamp": "2026-09-05T22:10:33.092Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:10:33.092Z"
+    },
+    {
+      "id": "bug-103",
+      "timestamp": "2026-09-05T22:11:16.980Z",
+      "error_message": "CSS fix: line",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx",
+      "root_cause": "line: '#f54242', area: '#f54242', point: '#f54242' \u2192 '#e34948', area: '#e34948', point: '#e34948'",
+      "fix": "Changed line: '#f54242', area: '#f54242', point: '#f54242' \u2192 '#e34948', area: '#e34948', point: '#e34948'",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:11:16.980Z"
+    },
+    {
+      "id": "bug-104",
+      "timestamp": "2026-09-05T22:11:27.742Z",
+      "error_message": "CSS fix: line",
+      "file": "upstream-ui/src/app/LineConfidenceChart/LineConfidenceChart.tsx",
+      "root_cause": "line: '#f54242', area: '#f54242', point: '#f54242' \u2192 '#e34948', area: '#e34948', point: '#e34948'",
+      "fix": "Changed line: '#f54242', area: '#f54242', point: '#f54242' \u2192 '#e34948', area: '#e34948', point: '#e34948'",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:11:27.742Z"
+    },
+    {
+      "id": "bug-105",
+      "timestamp": "2026-09-05T22:13:47.537Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 8\u219212 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:13:47.537Z"
+    },
+    {
+      "id": "bug-106",
+      "timestamp": "2026-09-05T22:14:05.951Z",
+      "error_message": "Wrong return value",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/Chart.tsx",
+      "root_cause": "Was returning: formatTimeInZone(date, stationTimezone);",
+      "fix": "Now returns: formatDateInZone(date, stationTimezone);",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:14:05.951Z"
+    },
+    {
+      "id": "bug-107",
+      "timestamp": "2026-09-05T22:15:30.036029Z",
+      "error_message": "Line Confidence uPlot chart shows no axis tick numbers or axis titles, and gridlines render purple instead of gray",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Two separate bugs. (1) axes[].values callbacks generated their own 5 evenly-spaced tick positions via a local generateTicks() helper instead of formatting uPlot own computed tick positions (the splits argument), so the returned label array did not correspond to the gridlines uPlot actually drew and rendering silently produced nothing. (2) axes[].grid.stroke / ticks.stroke / stroke were set to var(--gray-300) / var(--gray-600), which are also not defined anywhere as real CSS custom properties, and even if they were, uPlot draws on <canvas> which cannot resolve CSS var() the way SVG/DOM styles can -- ctx.strokeStyle silently ignores an unresolvable value and keeps whatever color was set by the previous draw call (the series line), producing purple gridlines.",
+      "fix": "Rewrote axes[].values as (u, splits) => splits.map(v => formatter(v)), using uPlot own tick positions. Replaced the var(--gray-XXX) references with literal hex matching tailwind.config.ts secondary gray scale (300/600). Added axes[0].space to prevent tick label overlap, and repurposed the previously-dead xFormatterOverview prop as a short date-only axis-tick formatter (formatDateInZone) distinct from the full date+time xFormatter used for the crosshair tooltip.",
+      "tags": [
+        "uplot",
+        "canvas",
+        "css-variables",
+        "styling",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-096",
+        "bug-101"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:15:30.036029Z"
+    },
+    {
+      "id": "bug-108",
+      "timestamp": "2026-09-05T22:17:19.088Z",
+      "error_message": "CSS fix: grid",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "grid: { stroke: axisGridColor, width: 1 \u2192 { show: false",
+      "fix": "Changed grid: { stroke: axisGridColor, width: 1 \u2192 { show: false",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:17:19.088Z"
+    },
+    {
+      "id": "bug-109",
+      "timestamp": "2026-09-05T22:23:06.790Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:23:06.790Z"
+    },
+    {
+      "id": "bug-110",
+      "timestamp": "2026-09-05T22:23:28.187Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 8\u21929 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:23:28.187Z"
+    },
+    {
+      "id": "bug-111",
+      "timestamp": "2026-09-05T22:23:52.261Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "11 lines replaced/restructured",
+      "fix": "Rewrote 16\u21924 lines (11 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:23:52.261Z"
+    },
+    {
+      "id": "bug-112",
+      "timestamp": "2026-09-05T22:31:01.057Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:31:01.057Z"
+    },
+    {
+      "id": "bug-113",
+      "timestamp": "2026-09-05T22:36:13.245Z",
+      "error_message": "Significant refactor of ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 11\u21929 lines (3 removed) | Also: // Check for gap from previous point; // Insert null separator for gap",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-05T22:36:26.776Z"
+    },
+    {
+      "id": "bug-114",
+      "timestamp": "2026-09-05T22:38:58.487011Z",
+      "error_message": "Line Confidence chart shows data only in a small sliver near the right edge of the plot; the rest of the (much wider) date range is completely blank, despite the API returning a full, evenly-distributed dataset across the whole range",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "Two compounding bugs. (1) getGapThresholdMs ignored the caller-supplied gapThresholdMinutes prop entirely (parameter was literally named _gapThresholdMinutes) and used a hardcoded per-aggregation-interval table copied from the old pre-uPlot D3 implementation (5 minutes for 'minute' aggregation). Any sensor whose real reporting cadence is coarser than that hardcoded value (e.g. hourly telemetry, 3600s apart, aggregated at the 'minute' level) had EVERY single consecutive pair of points flagged as a gap. (2) processSensorData's gap handling pushed `null` directly into the x-axis timestamp array (xs.push(null)) as a separator. uPlot's AlignedData type requires the x-array to contain only real numbers -- only the y-series arrays may contain null. With nulls scattered through data[0], uPlot's internal auto-range min/max computation (which coerces null to 0 in numeric comparisons) computed an x-min near epoch 0 instead of the true data start, so the real April-September 2026 data compressed into a thin sliver at the far right of a scale effectively spanning from 1970. Confirmed by direct network-response inspection (full, evenly-distributed 3590 buckets across 6 months) versus a debug dump of the transformed xs array immediately before passing it to `new uPlot()`, and by re-reading uPlot AlignedData's TypeScript type (xValues: number[] | TypedArray, no null variant, vs y-values which explicitly allow null).",
+      "fix": "getGapThresholdMs now simply converts the passed gapThresholdMinutes to ms and no longer reads a hardcoded per-interval table. processSensorData no longer pushes null into xs; a detected gap now pushes a real, monotonic timestamp (lastTs + 1) with null y-values instead. Also discovered spanGaps was set to true on every series, which per uPlot's own docs means 'null data values will not cause line breaks' -- the OPPOSITE of the code's own stated intent ('Inserts null at gap boundaries so uPlot's spanGaps breaks lines'). Changed spanGaps to false everywhere so a real gap (now correctly threshold-calibrated) actually renders as a visible break instead of being silently bridged over.",
+      "tags": [
+        "uplot",
+        "aligneddata",
+        "x-axis",
+        "gap-detection",
+        "tsx",
+        "line-confidence-chart",
+        "critical"
+      ],
+      "related_bugs": [
+        "bug-096",
+        "bug-101",
+        "bug-107"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:38:58.487011Z"
+    },
+    {
+      "id": "bug-115",
+      "timestamp": "2026-09-05T22:38:58.487011Z",
+      "error_message": "Chart hover legend/crosshair readout: 'Time' value never displays (always blank/wrong); labels read 'Primary'/'Primary Upper'/'Primary Lower' which are unclear to users",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts, upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "uPlot's Series.value callback signature is (self, rawValue, seriesIdx, idx) -- the second argument is already the resolved raw value for that series at the cursor position, not an index. The Time series' callback was `(u, i) => u.data[0][i]`, treating the raw millisecond timestamp (a huge number) as an array index into u.data[0], indexing far out of bounds and always returning undefined.",
+      "fix": "Rewrote the Time series' value callback to use the already-resolved rawValue directly, formatted through a new full date+time formatter (legendTimeFormatter, wraps xFormatter). Renamed legend labels: 'Primary' -> 'Value', 'Primary Upper'/'Primary Lower' -> 'Upper Bound'/'Lower Bound', 'Sensor N' -> 'Sensor N Value'/'Sensor N Upper Bound'/'Sensor N Lower Bound' for comparison sensors.",
+      "tags": [
+        "uplot",
+        "legend",
+        "tooltip",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-096"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:38:58.487011Z"
+    },
+    {
+      "id": "bug-116",
+      "timestamp": "2026-09-05T22:41:55.452Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:41:55.452Z"
+    },
+    {
+      "id": "bug-117",
+      "timestamp": "2026-09-05T22:53:02.707Z",
+      "error_message": "Wrong condition in logic",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Condition was: if (!containerRef.current || isInitialized)",
+      "fix": "Changed to: if (!containerRef.current)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:53:02.707Z"
+    },
+    {
+      "id": "bug-118",
+      "timestamp": "2026-09-05T22:55:54.421Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/Sensor/viz/LineConfidenceViz/_components/SensorFilteringModal.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:55:54.421Z"
+    },
+    {
+      "id": "bug-119",
+      "timestamp": "2026-09-05T22:56:46.864Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:56:46.864Z"
+    },
+    {
+      "id": "bug-120",
+      "timestamp": "2026-09-05T22:57:17.373Z",
+      "error_message": "Null/undefined access in ",
+      "file": "upstream-ui/src/app/LineConfidenceChart/utils/uPlotDataTransform.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T22:57:17.373Z"
+    },
+    {
+      "id": "bug-121",
+      "timestamp": "2026-09-05T22:57:43.797Z",
+      "error_message": "Type error",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation | Also: // Resize observer. Only tracks width \u2014 the container's own ; // to be pinned to this observed value, but uPlot renders a ",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-05T23:02:39.098Z"
+    },
+    {
+      "id": "bug-122",
+      "timestamp": "2026-09-05T23:01:06.451653Z",
+      "error_message": "\"Compare\" feature: selecting a sensor and clicking \"Add Selected Sensors\" adds it to the \"Comparison Sensors\" list, but no second line or legend row ever appears on the chart",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "uPlot's series list (opts.series, and therefore the number/identity of series the live instance knows about) is fixed at construction time (new uPlot(opts, data, target)). The 'Initialize uPlot' effect ran only once on mount ([] deps); the separate 'Update data' effect only called u.setData()/u.setScale() when props changed, never u.addSeries(). When a comparison sensor was added after mount, buildSeriesConfig recomputed a series array with 3 more entries and dataArray grew 3 more columns, but the already-constructed uPlot instance was never told about the new series -- setData() with more data columns than configured series silently does not add a new line or legend row.",
+      "fix": "Changed the mount effect's dependency array from [] to [series.length, secondaryUnitLabel], and removed the isInitialized early-return guard, so the effect properly destroys and recreates the whole uPlot instance whenever the series count changes (comparison sensor added/removed) or a secondary axis needs to appear/disappear. This also naturally re-reads all other current prop values (colors, formatters, renderDataPoints) fresh at recreation time. Verified via Playwright: adding a sensor now shows a second colored line and a 'Sensor 2 Value/Upper Bound/Lower Bound' legend row; removing it cleanly reverts with no console errors.",
+      "tags": [
+        "uplot",
+        "compare-sensors",
+        "series",
+        "react-effect",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-096",
+        "bug-101",
+        "bug-107",
+        "bug-114"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T23:01:06.451653Z"
+    },
+    {
+      "id": "bug-123",
+      "timestamp": "2026-09-05T23:02:50.649Z",
+      "error_message": "Wrong return value",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "Was returning: <div ref={containerRef} className=\"w-full h-full\" ",
+      "fix": "Now returns: <div ref={containerRef} className=\"w-full\" style={",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T23:02:50.649Z"
+    },
+    {
+      "id": "bug-124",
+      "timestamp": "2026-09-05T23:04:15.045562Z",
+      "error_message": "Chart legend (Time/Value/Upper Bound/... row below the chart) overflows past its container into the page footer, worse with more comparison sensors added",
+      "file": "upstream-ui/src/app/LineConfidenceChart/UPlotChart.tsx",
+      "root_cause": "The outer container div that uPlot mounts into had a hardcoded CSS height (style={{height: dimensions.height}}), the same value passed to uPlot as the canvas height. uPlot renders its legend table as a DOM sibling below the canvas, inside that same container -- so the true content height is canvas height + legend height, which grows with each comparison sensor's legend row. Since the container's fixed height only accounted for the canvas, the legend simply overflowed (default overflow: visible) past the bottom of the box into whatever rendered next on the page (the site footer).",
+      "fix": "Removed the fixed height from the container div in the main render path so it sizes to its actual content (canvas + legend) instead of being capped at canvas-only height. Also changed the ResizeObserver to only track width, not height -- height was previously fed back from the observed container size, which would have created a feedback loop (legend grows -> observed container height grows -> re-applied as canvas height -> grows again) once the container's own height was no longer pinned.",
+      "tags": [
+        "uplot",
+        "legend",
+        "css",
+        "layout",
+        "overflow",
+        "tsx",
+        "line-confidence-chart"
+      ],
+      "related_bugs": [
+        "bug-096",
+        "bug-122"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T23:04:15.045562Z"
+    },
+    {
+      "id": "bug-101",
+      "timestamp": "2026-09-11T00:00:00Z",
+      "error_message": "Clicking publish in the Upstream UI fails when the CKAN dataset was already created during ingestion.",
+      "file": "upstream-ui/src/hooks/station/usePublish.ts",
+      "root_cause": "The UI omitted patch_existing_ckan_dataset, so the backend rejected the existing deterministic CKAN dataset as a name conflict instead of updating its visibility.",
+      "fix": "UI station and campaign publish requests now set patchExistingCkanDataset=true, allowing the existing CKAN dataset to be patched public during publication.",
+      "tags": ["ckan", "publishing", "ui", "dataset-conflict"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": "bug-102",
+      "timestamp": "2026-09-11T00:00:00Z",
+      "error_message": "Focused CKAN publish tests could not start: ModuleNotFoundError: No module named 'sqlalchemy'.",
+      "file": "upstream-docker-pods/tests/conftest.py",
+      "root_cause": "The current Python test environment is missing the SQLAlchemy dependency required by the repository test fixture setup.",
+      "fix": "Not fixed; test execution is blocked by the local environment. A no-conftest test attempt will be used to isolate the focused unit test if possible.",
+      "tags": ["tests", "environment", "sqlalchemy", "ckan"],
+      "related_bugs": ["bug-100"],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T00:00:00Z"
     }
   ]
 }
